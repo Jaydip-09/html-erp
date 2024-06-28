@@ -1,0 +1,75 @@
+.login-form {
+  transform: scale(1.1);
+}
+
+.show-hide1 {
+  position: absolute;
+  top: 18px;
+  right: 30px;
+  transform: translateY(-50%);
+  text-transform: capitalize;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 1;
+  user-select: none;
+}
+.table-responsive::-webkit-scrollbar {
+  width: 0;
+}
+.icon .icondt:nth-child(1) {
+  cursor: pointer;
+  color: blue;
+  font-size: 20px;
+  padding: 0 12px;
+  margin: 0 0 0 2px;
+}
+.icon .icondt:nth-child(2) {
+  cursor: pointer;
+  color: green;
+  font-size: 20px;
+  padding: 0 12px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input {
+  border-color: #c2c2c2 !important;
+}
+.login-card input {
+  border-color: #c2c2c2 !important;
+}
+select {
+  border-color: #c2c2c2 !important;
+}
+textarea {
+  border-color: #c2c2c2 !important;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.customizer-links {
+  visibility: hidden !important;
+}
+::placeholder {
+  color: black !important;
+}
+
+::-webkit-input-placeholder {
+  color: black !important;
+}
+
+:-ms-input-placeholder {
+  color: black !important;
+}
+
+::-ms-input-placeholder {
+  color: black !important;
+}
+.fa, .fa-regular
+{
+  cursor: pointer !important;
+}
