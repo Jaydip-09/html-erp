@@ -112,33 +112,39 @@
       href="../assets/css/responsive.css"
     />
     <style>
-      .modal {
-        max-height: 800px !important;
-        overflow-y: hidden !important;
-      }
-      .modal-dialog .modal-body {
-        max-height: 400px !important;
-        overflow-y: scroll !important;
-      }
-
-      .section h6 {
-        background-color: #f1f1f1;
-        color: #000;
-      }
+         .wizard-step {
+      display: none;
+    }
+    .wizard-step.active {
+      display: block;
+    }
+    .section-title {
+      padding: 10px;
+      background-color: #f1f1f1;
+      font-weight: bold;
+    }
+    .section-content {
+      margin-bottom: 20px;
+    }
+    .modal-body .row {
+      margin-bottom: 10px;
+    }
     </style>
   </head>
 
   <body>
     <!-- Loader starts-->
-    <div class="loader-wrapper">
-      <div class="main-loader">
+    <div class="loader-wrapper" style="visibility: hidden !important">
+      <div class="main-loader" style="visibility: hidden !important">
         <div class="bar-0"></div>
         <div class="bar-1"></div>
         <div class="bar-2"></div>
         <div class="bar-3"></div>
         <div class="bar-4"></div>
       </div>
-      <div class="loading">Loading...</div>
+      <div class="loading" style="visibility: hidden !important">
+        Loading...
+      </div>
     </div>
     <!-- Loader ends-->
     <!-- page-wrapper Start-->
@@ -219,7 +225,7 @@
           </div>
         </div>
       </div>
-      <!-- Page Header Ends                              -->
+      <!-- Page Header Ends-->
       <!-- Page Body Start-->
       <div class="page-body-wrapper horizontal-menu">
         <!-- Page Sidebar Start-->
@@ -296,240 +302,289 @@
             </div>
           </nav>
         </header>
-
-        <div
-          class="modal fade"
-          id="placement"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                  Add Placement
-                </h5>
-                <button
-                  class="btn-close"
-                  type="button"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <form action="" class="">
-                  <div class="row">
-                    <div class="col-lg-12 mb-2">
-                      <label>Organization Name</label>
-                      <div class="input-group">
-                        <input
-                          class="form-control"
-                          type="text"
-                          placeholder="Enter Organization Name"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-12 mb-2">
-                      <label>Remarks</label>
-                      <div class="input-group">
-                        <input
-                          class="form-control"
-                          type="text"
-                          placeholder="Remarks"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-12 mb-2">
-                      <label>Upload File</label>
-                      <div class="input-group">
-                        <input class="form-control" type="file" />
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <div class="d-flex justify-content-end">
-                  <button
-                    class="btn btn-pill btn-secondary mx-2"
-                    type="button"
-                    data-bs-dismiss="modal"
-                  >
-                    Cancel
-                  </button>
-                  <!-- <button class="btn btn-pill btn-primary-gradien mx-2" type="button">Submit</button> -->
-                  <button
-                    class="btn btn-pill btn-success"
-                    type="button"
-                    data-bs-dismiss="modal"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="modal fade"
-          id="status"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                  Change Status
-                </h5>
-                <button
-                  class="btn-close"
-                  type="button"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <label>Status</label>
-                <div class="input-group">
-                  <select
-                    class="form-select digits"
-                    id="statusSelect"
-                    onchange="handleSelectChange()"
-                  >
-                    <option disabled selected>Select Center</option>
-                    <option value="certified">Certified</option>
-                    <option value="notCertified">Not Certified</option>
-                    <option value="processing">Processing</option>
-                    <option value="assessment">Assessment</option>
-                    <option value="reassessment">Reassessment</option>
-                    <option value="dropout">Dropout</option>
-                  </select>
-                </div>
-                <div id="dynamicInputContainer" class="mt-2"></div>
-              </div>
-              <div class="modal-footer">
-                <div class="d-flex justify-content-end">
-                  <button
-                    class="btn btn-pill btn-secondary mx-2"
-                    type="button"
-                    data-bs-dismiss="modal"
-                  >
-                    Cancel
-                  </button>
-                  <!-- <button class="btn btn-pill btn-primary-gradien mx-2" type="button">Submit</button> -->
-                  <button
-                    class="btn btn-pill btn-success"
-                    type="button"
-                    data-bs-dismiss="modal"
-                  >
-                    Change
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- Page Sidebar Ends-->
         <div class="page-body">
           <div class="container-fluid">
             <div class="page-header dash-breadcrumb py-3">
               <div class="row">
                 <div class="col-6">
-                  <h3 class="f-w-600">Candidate Details</h3>
+                  <h3 class="f-w-600">Inventory Details</h3>
                 </div>
-                <div class="col-6 d-flex justify-content-end">
-                <a href="placement.html" class="text-black"><button class="btn btn-pill btn-primary mx-2">Back</button></a>
+                <div class="col-6">
+                  <div class="breadcrumb-sec">
+                    <ul class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a href="dashboard.html"><i data-feather="more-horizontal"></i></a>
+                      </li>
+                      <li class="breadcrumb-item">Other</li>
+                      <li class="breadcrumb-item active">Inventory</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add Damaged stock</h5>
+                                <button class="btn-close" type="button" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" class="">
+                                    <div class="row">
+                                        <div class="col-6">
+                                          <label>Center</label>
+                                          <select class="form-select digits" id="exampleFormControlSelect9" disabled>
+                                              <option disabled>Select Center</option>
+                                              <option selected>Center-1</option>
+                                              <option>Center-2</option>
+                                              <option>Center-3</option>
+                                              <option>Center-4</option>
+                                          </select>
+                                      </div>
+                                      <div class="col-6">
+                                          <label>Stock Type</label>
+                                          <select class="form-select digits" id="exampleFormControlSelect9" disabled>
+                                              <option disabled>Select type of Stock</option>
+                                              <option selected>PC</option>
+                                              <option>Microscope</option>
+                                              <option>Mouse</option>
+                                              <option>Keyboard</option>
+                                              <option>projector</option>
+                                          </select>
+                                      </div>
+                                      <div class="col-6">
+                                        <div class="form-group">
+                                          <label for="experience">Damaged Quantity</label>
+                                          <input
+                                            type="number"
+                                            class="form-control"
+                                            id="Damaged quantity"
+                                            name="Damaged quantity"
+                                            min="0"
+                                            placeholder="Enter Damaged Quantity"
+                                            required
+                                          />
+                                        </div>
+                                      </div>
+                                      <div class="col-6">
+                                        <div class="form-group">
+                                          <label for="experience">Date</label>
+                                          <input
+                                            type="date"
+                                            class="form-control"
+                                            id="date"
+                                            name="date"
+                                            min="0"
+                                            placeholder="Enter Date"
+                                            required
+                                          />
+                                        </div>
+                                      </div>
+                                      <div class="col-12">
+                                        <div class="form-group" title="Indian Rupees">
+                                          <label for="salary">Remarks</label>
+                                          <textarea
+                                            type="text"
+                                            class="form-control"
+                                            id="Remarks"
+                                            name="Remarks"
+                                            min="0"
+                                            required
+                                          >Enter Remarks</textarea>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-pill btn-secondary mx-2" type="button"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-pill btn-success" type="button">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+          <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal">Center Delete</h5>
+                      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Are you sure, you want to delete?</p>
+                  
+                    </div>
+                    <div class="modal-footer">
+                      <div class="d-flex justify-content-end">
+                        <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">
+                          Cancel
+                        </button>
+                        <!-- <button class="btn btn-pill btn-primary-gradien mx-2" type="button">Submit</button> -->
+                        <button class="btn btn-pill btn-success" type="button">
+                          Yes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <div
+    class="modal fade"
+    id="viewDetailsModal"
+    tabindex="-1"
+    aria-labelledby="viewDetailsModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="viewDetailsModalLabel">Staff Details</h5>
+          <button
+                  class="btn-close"
+                  type="button"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+        </div>
+        <div class="modal-body">
+          <!-- Personal Details Section -->
+          <div class="section-content">
+            <div class="section-title">Personal Details</div>
+            <div class="row p-2">
+              <div class="col-6">
+                <label>Name:</label>
+                <span>Rohit</span>
+              </div>
+              <div class="col-6">
+                <label>Email:</label>
+                <span>rohit@gmail.com</span>
+              </div>
+              <div class="col-6">
+                <label>Contact Number:</label>
+                <span>9429641779</span>
+              </div>
+              <div class="col-6">
+                <label>Qualification:</label>
+                <span>Bachelor's Degree</span>
+              </div>
+              <div class="col-6">
+                <label>Role:</label>
+                <span>Admin</span>
+              </div>
+              <div class="col-6">
+                <label>Position:</label>
+                <span>Centre Manager</span>
+              </div>
+            </div>
+          </div>
+          <!-- Other Details Section -->
+          <div class="section-content">
+            <div class="section-title">Other Details</div>
+            <div class="row p-2">
+              <div class="col-6">
+                <label>Experience:</label>
+                <span>1 year</span>
+              </div>
+              <div class="col-6">
+                <label>Salary (INR):</label>
+                <span>25000</span>
+              </div>
+              <div class="col-6">
+                <label>Joining Date:</label>
+                <span>01-11-2023</span>
+              </div>
+              <div class="col-6">
+                <label>Left Date:</label>
+                <span>01-11-2023</span>
+              </div>
+              <div class="col-6">
+                <label>Address:</label>
+                <span>123 Main St, Springfield</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-pill btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-header dash-breadcrumb py-3">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-end">
+            <a href="Inventory.html" class="text-black"><button
+                    class="btn btn-pill btn-primary mx-2">Back</button></a>
+        </div>
+    </div>
+</div>
           <div class="container-fluid">
+            <div class="col-6 pt-4 pb-2">
+            </div>
             <div class="card">
-            <div class="card-body">
-            <div class="section mb-4" id="personalDetails">
-                <h6 class="p-2 bg-light">Personal Details</h6>
-                <div class="row p-2">
-                  <div class="col-3"><strong>Name:</strong></div>
-                  <div class="col-3">John Doe</div>
-                  <div class="col-3"><strong>Age:</strong></div>
-                  <div class="col-3">30</div>
-                  <div class="col-3"><strong>Email:</strong></div>
-                  <div class="col-3">john.doe@example.com</div>
-                  <div class="col-3"><strong>Contact Number:</strong></div>
-                  <div class="col-3">(123) 456-7890</div>
-                  <div class="col-3"><strong>Aadhar Number:</strong></div>
-                  <div class="col-3">1234-5678-9012</div>
-                  <div class="col-3"><strong>Address:</strong></div>
-                  <div class="col-3">123 Main St, Springfield</div>
-                  <div class="col-3"><strong>Gender:</strong></div>
-                  <div class="col-3">Male</div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="display" id="basic-1">
+                    <thead>
+                      <tr>
+                        <th>SrNo.</th>
+                        <th>Center</th>
+                        <th>Stock Type</th>
+                        <th>Status</th>
+                        <th>Balance</th>
+                        <th>Date</th>
+                        <!-- <th>Action</th> -->
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Center-1</td>
+                        <td>PC</td>
+                        <td>New Added</td>
+                        <td>38</td>
+                        <td>02/12/2023</td>
+                        <!-- <td class="d-flex justify-content-center icon">
+                            <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal"
+                            data-original-title="test" data-bs-target="#exampleModal"
+                            title="Edit"></i>
+                          <i class="icondt fa fa-trash text-danger" data-bs-toggle="modal" data-original-title="test" data-bs-target="#modal" id="endorse" title="delete"></i>
+                        </td> -->
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Center-1</td>
+                        <td>PC</td>
+                        <td>Damaged</td>
+                        <td>10</td>
+                        <td>12/02/2024</td>
+                        <!-- <td class="d-flex justify-content-center icon">
+                            <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal"
+                            data-original-title="test" data-bs-target="#exampleModal"
+                            title="Edit"></i>
+                        </td> -->
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-              </div>
-              <div class="section mb-4" id="otherDetails">
-                <h6 class="p-2 bg-light">Other Details</h6>
-                <div class="row p-2">
-                  <div class="col-3"><strong>Father Name:</strong></div>
-                  <div class="col-3">Suresh Doe</div>
-                  <div class="col-3"><strong>Mother Name:</strong></div>
-                  <div class="col-3">Meena Doe</div>
-                  <div class="col-3"><strong>Qualification:</strong></div>
-                  <div class="col-3">Diploma</div>
-                  <div class="col-3"><strong>Category:</strong></div>
-                  <div class="col-3">General</div>
-                  <div class="col-3"><strong>Sector:</strong></div>
-                  <div class="col-3">XYZ</div>
-                  <div class="col-3"><strong>Center Name:</strong></div>
-                  <div class="col-3">Ahmedabad</div>
-                  <div class="col-3"><strong>Course Name:</strong></div>
-                  <div class="col-3">BCA</div>
-                  <div class="col-3"><strong>Batch Id:</strong></div>
-                  <div class="col-3">B12</div>
-                  <div class="col-3"><strong>Status:</strong></div>
-                  <div class="col-3">Placed</div>
-                  <div class="col-3"><strong>Reference:</strong></div>
-                  <div class="col-3">Portal</div>
-                </div>
-              </div>
-              <div class="section" id="placementDetails">
-                <h6 class="p-2 bg-light">Placement Details (If any)</h6>
-                <div class="row p-2">
-                  <div class="col-3"><strong>Company Name:</strong></div>
-                  <div class="col-3">XYZ Corp</div>
-                  <div class="col-3"><strong>Position:</strong></div>
-                  <div class="col-3">Software Engineer</div>
-                  <div class="col-3"><strong>Joining Date:</strong></div>
-                  <div class="col-3">01/01/2024</div>
-                  <div class="col-3">
-                    <strong>Appointment Letter:</strong>
-                  </div>
-                  <div class="col-3">
-                    <a href="#" class="text-decoration-underline"
-                      >View Appointment Letter</a
-                    >
-                  </div>
-                </div>
-                <div class="row p-2">
-                  <div class="col-3"><strong>Company Name:</strong></div>
-                  <div class="col-3">ABC Ltd.</div>
-                  <div class="col-3"><strong>Position:</strong></div>
-                  <div class="col-3">Lead Engineer</div>
-                  <div class="col-3"><strong>Joining Date:</strong></div>
-                  <div class="col-3">01/05/2024</div>
-                  <div class="col-3">
-                    <strong>Appointment Letter:</strong>
-                  </div>
-                  <div class="col-3">
-                    <a href="#" class="text-decoration-underline"
-                      >View Appointment Letter</a
-                    >
-                  </div>
-                </div>
-              </div>
               </div>
             </div>
           </div>
@@ -553,42 +608,6 @@
             </div>
           </div>
         </footer>
-        <div
-          class="modal fade"
-          id="candidateModal"
-          tabindex="-1"
-          aria-labelledby="candidateModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="candidateModalLabel">
-                  Candidate Details
-                </h5>
-                <button
-                  class="btn-close"
-                  type="button"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-pill btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <!-- tap on top starts-->
         <div class="tap-top"><i class="icon-control-eject"></i></div>
         <!-- tap on tap ends-->
@@ -633,40 +652,27 @@
       function myFunction() {
         window.location.href = "editInquiry.html";
       }
-      function handleSelectChange() {
-        const select = document.getElementById("statusSelect");
-        const selectedValue = select.value;
-        const dynamicInputContainer = document.getElementById(
-          "dynamicInputContainer"
-        );
-
-        // Clear the container first
-        dynamicInputContainer.innerHTML = "";
-
-        if (selectedValue === "certified") {
-          // Create file input
-          const fileInputLabel = document.createElement("label");
-          fileInputLabel.textContent = "Upload Certificate";
-          const fileInput = document.createElement("input");
-          fileInput.type = "file";
-          fileInput.className = "form-control";
-
-          dynamicInputContainer.appendChild(fileInputLabel);
-          dynamicInputContainer.appendChild(fileInput);
-        } else if (selectedValue === "assessment") {
-          // Create date input
-          const dateInputLabel = document.createElement("label");
-          dateInputLabel.textContent = "Assessment Date";
-          const dateInput = document.createElement("input");
-          dateInput.type = "date";
-          dateInput.className = "form-control";
-
-          dynamicInputContainer.appendChild(dateInputLabel);
-          dynamicInputContainer.appendChild(dateInput);
-        }
-      }
     </script>
-
+    <script>
+      $(document).ready(function () {
+        $('#nextToOtherDetails').click(function () {
+          $('#personalDetails').removeClass('active');
+          $('#otherDetails').addClass('active');
+        });
+  
+        $('#backToPersonalDetails').click(function () {
+          $('#otherDetails').removeClass('active');
+          $('#personalDetails').addClass('active');
+        });
+  
+        $('#staffForm').submit(function (event) {
+          event.preventDefault();
+          // Handle form submission logic here
+          alert('Form submitted!');
+          $('#addStaffModal').modal('hide');
+        });
+      });
+    </script>
     <!-- login js-->
     <!-- Plugin used-->
   </body>

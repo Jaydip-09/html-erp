@@ -203,7 +203,7 @@
                     <div class="page-header dash-breadcrumb py-3">
                         <div class="row">
                             <div class="col-6">
-                                <h3 class="f-w-600">Career List</h3>
+                                <h3 class="f-w-600">stock List</h3>
                             </div>
                             <div class="col-6">
                                 <div class="breadcrumb-sec">
@@ -211,7 +211,7 @@
                                         <li class="breadcrumb-item"><a href="dashboard.html"><i data-feather="home"></i></a>
                                         </li>
                                         <li class="breadcrumb-item">Master</li>
-                                        <li class="breadcrumb-item active">Career</li>
+                                        <li class="breadcrumb-item active">stock</li>
                                     </ul>
                                 </div>
                             </div>
@@ -219,35 +219,137 @@
                     </div>
                 </div>
                 <!-- Container-fluid starts-->
-
+                <div class="container-fluid default-dash">
+                    <div class="row">
+                        <div class="col-lg-12 row d-flex justify-content-end align-items-end">
+                          <div class="col-lg-3 d-flex justify-content-end align-items-end">
+                            <button class="btn btn-pill btn-primary" data-bs-toggle="modal"
+                                    data-original-title="test" data-bs-target="#exampleModal">Add Stock</button>
+                            <!-- <button class="btn btn-pill btn-primary"><i class="icondt text-primary fa fa-pen" data-bs-toggle="modal"
+                              data-original-title="test" data-bs-target="#exampleModal"
+                              title="Edit">Add Stock</i></button> -->
+                          </div>
+                          
+                        </div>
+                      </div>
+                </div>
+                
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Endorse</h5>
-                                <button class="btn-close" type="button" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Are you sure, you want to endorse this Candidate?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <div class="d-flex justify-content-end">
-                                    <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">Cancel</button>
-                                    <!-- <button class="btn btn-pill btn-primary-gradien mx-2" type="button">Submit</button> -->
-                                    <button class="btn btn-pill btn-success" type="button">Endorse</button>
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Stock Type</h5>
+                            <button class="btn-close" type="button" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="">
+                                <div class="row">
+                                    <div class="col-lg-12 mt-2">
+                                        <label>Stock Type</label>
+                                        <input type="text" name="" id="" class="form-control"
+                                            placeholder="Enter Stock Type">
+                                    </div>
+
                                 </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-pill btn-secondary mx-2" type="button"
+                                    data-bs-dismiss="modal">Cancel</button>
+                                <button class="btn btn-pill btn-success" type="button">Add</button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="modal fade" id="editModal" tabindex="-1" role="dialog"
+                aria-labelledby="editModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editModalLabel">Edit Stock Type</h5>
+                            <button class="btn-close" type="button" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="">
+                                <div class="row">
+                                    <div class="col-lg-12 mt-2">
+                                        <label>Stock Type</label>
+                                        <input type="text" name="" id="" class="form-control" value="stock-1"
+                                            placeholder="Enter Stock Type">
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-pill btn-secondary mx-2" type="button"
+                                    data-bs-dismiss="modal">Cancel</button>
+                                <button class="btn btn-pill btn-success" type="button">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- <div class="modal fade" id="#exampleModal" tabindex="-1" role="dialog"
+                aria-labelledby="modal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">stock Delete</h5>
+                            <button class="btn-close" type="button" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure, you want to delete?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">Cancel</button>
+                                <button class="btn btn-pill btn-success" type="button">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+                
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal">stock Delete</h5>
+                  <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure, you want to delete?</p>
+              
+                </div>
+                <div class="modal-footer">
+                  <div class="d-flex justify-content-end">
+                    <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">
+                      Cancel
+                    </button>
+                    <!-- <button class="btn btn-pill btn-primary-gradien mx-2" type="button">Submit</button> -->
+                    <button class="btn btn-pill btn-success" type="button">
+                      Yes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 
                 <div class="container-fluid">
                     <div class="col-6 pt-4 pb-2">
-                        <!-- <h3 class="f-w-600" style="font-size: 24px; font-weight: bold;">Career List</h3> -->
+                        <!-- <h3 class="f-w-600" style="font-size: 24px; font-weight: bold;">Course List</h3> -->
                     </div>
                     <div class="card">
                         <div class="card-body">
@@ -255,31 +357,32 @@
                                 <table class="display" id="basic-1">
                                     <thead>
                                         <tr>
-                                            <th>Candidate Name</th>
-                                            <th>Contact No</th>
-                                            <th>Remarks</th>
-                                            <th>Center Name</th>
-                                            <!-- <th>Action</th> -->
+                                            <th>Sr.No.</th>
+                                            <th>stock Name</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Candidate 1</td>
-                                            <td>1234567890</td>
-                                            <td>ABC1</td>
-                                            <td>isanpur</td>
-                                            <!-- <td class="d-flex justify-content-center icon">
-                                                <i class="icondt fa fa-eye text-success" title="View" onclick="myFunction()"></i>
-                                            </td> -->
+                                            <td>1</td>
+                                            <td>stock-1</td>
+                                            <td class="d-flex justify-content-center icon">
+                                              <i class="icondt text-primary fa fa-pencil" data-bs-toggle="modal"
+                                                    data-original-title="test" data-bs-target="#editModal"
+                                                    title="Edit"></i>
+                                                <!-- <i class="icondt fa fa-pencil" title="Edit Vendor" onclick="myFunction()"></i> -->
+                                                <i class="icondt fa fa-trash text-danger" data-bs-toggle="modal" data-original-title="test" data-bs-target="#modal" id="endorse" title="delete"></i>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td>Candidate 2</td>
-                                            <td>1234562890</td>
-                                            <td>ABC2</td>
-                                            <td>isanpur</td>
-                                            <!-- <td class="d-flex justify-content-center icon">
-                                                <i class="icondt fa fa-eye text-success" title="View" onclick="myFunction()"></i>
-                                            </td> -->
+                                            <td>2</td>
+                                            <td>stock-2</td>
+                                            <td class="d-flex justify-content-center icon">
+                                              <i class="icondt text-primary fa fa-pencil" data-bs-toggle="modal"
+                                              data-original-title="test" data-bs-target="#editModal"
+                                              title="Edit"></i>
+                                              <i class="icondt fa fa-trash text-danger" data-bs-toggle="modal" data-original-title="test" data-bs-target="#modal" id="endorse" title="delete"></i>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
