@@ -51,28 +51,6 @@
         .attendance-container {
             padding: 20px;
         }
-        .row-flex {
-            display: flex;
-            align-items: stretch;
-        }
-        .things-to-do {
-            /* background-color: #f8f9fa; */
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            flex: 1;
-            margin-top: 80px;
-        }
-        .things-to-do .circle {
-            border: 2px solid #007bff;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
         .attendance-card {
             border-radius: 10px;
             flex: 2;
@@ -95,8 +73,8 @@
     .calendar {
       display: none;
     }
-    .expanded .calendar {
-      display: table-row-group;
+    .expanded {
+      display: table-row;
     }
     .arrow {
       cursor: pointer;
@@ -109,9 +87,7 @@
       display: flex;
       flex-direction: column;
     }
-    .left_part .card, .right-part .card {
-      flex: 1;
-    }
+    
     .circle {
       width: 50px;
       height: 50px;
@@ -292,86 +268,8 @@
             </header>
             <!-- Page Sidebar Ends-->
             <div class="page-body">
-                <div class="container attendance-container">
-                    <!-- <div class="row row-flex">
-                        <div class="col-md-4 left_part">
-                            <div class="card ">
-                                <div class="card-header attendance-card-header">
-                            <div class="things-to-do">
-                                <div class="circle">
-                                    <span class="check-mark">✔️</span>
-                                </div>
-                                <h5>All Done</h5>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                        <div class="col-md-8 right-part">
-                            <div class="card attendance-card">
-                                <div class="card-header attendance-card-header">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <button class="btn btn-link"><</button>
-                                        <h5>29 Jun 2024 | Sat</h5>
-                                        <button class="btn btn-link">></button>
-                                    </div>
-                                    <a href="#" class="btn btn-link">Detailed Attendance View</a>
-                                </div>
-                                <div class="card-body attendance-card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h6>Present</h6>
-                                            <p>13</p>
-                                        </div>
-                                        <div class="col">
-                                            <h6>Absent</h6>
-                                            <p>0</p>
-                                        </div>
-                                        <div class="col">
-                                            <h6>Not Marked</h6>
-                                            <p>0</p>
-                                        </div>
-                                        <div class="col">
-                                            <h6>Half Day</h6>
-                                            <p>0</p>
-                                        </div>
-                                        <div class="col">
-                                            <h6>On Leave</h6>
-                                            <p>0</p>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3 text-left">
-                                        <div class="col-3">
-                                            <h6>Fine hours</h6>
-                                            <p>0h 0m</p>
-                                        </div>
-                                        <div class="col-3">
-                                            <h6>Deactivated</h6>
-                                            <p>0</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <button class="btn btn-outline-primary btn-sm">Upcoming leaves in 7 days: 0</button>
-                                    <button class="btn btn-outline-primary btn-sm">Daily Work Entries (0)</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="row row-flex">
-                        <div class="col-md-4 left_part">
-                          <div class="card">
-                            <div class="card-header attendance-card-header">
-                              <div class="things-to-do">
-                                <div class="circle">
-                                  <span class="check-mark">✔️</span>
-                                </div>
-                                <h5>All Done</h5>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-8 right-part">
-                          <div class="card attendance-card">
+              <div class="attendance-summary container">
+                <div class="card">
                             <div class="card-header attendance-card-header">
                               <div class="d-flex justify-content-between align-items-center">
                                 <button class="btn btn-link"><</button>
@@ -380,50 +278,58 @@
                               </div>
                               <a href="hr_leave.html" class="btn btn-link">Detailed Attendance View</a>
                             </div>
-                            <div class="card-body attendance-card-body">
+                            <div class="attendance-card-body">
                               <div class="row">
                                 <div class="col">
                                   <h6>Present</h6>
-                                  <p>13</p>
+                                  <h4 class="f-w-600">13</h4>
                                 </div>
                                 <div class="col">
                                   <h6>Absent</h6>
-                                  <p>0</p>
+                                  <h4 class="f-w-600">0</h4>
                                 </div>
                                 <div class="col">
                                   <h6>Not Marked</h6>
-                                  <p>0</p>
+                                  <h4 class="f-w-600">0</h4>
                                 </div>
                                 <div class="col">
                                   <h6>Half Day</h6>
-                                  <p>0</p>
+                                  <h4 class="f-w-600">0</h4>
                                 </div>
                                 <div class="col">
                                   <h6>On Leave</h6>
-                                  <p>0</p>
+                                  <h4 class="f-w-600">0</h4>
+                                </div>
+                                <div class="col">
+                                  <h6>Comp Off</h6>
+                                  <h4 class="f-w-600">2</h4>
+                                </div>
+                                <div class="col">
+                                  <h6>Deactivated</h6>
+                                  <h4 class="f-w-600">0</h4>
                                 </div>
                               </div>
-                              <div class="row mt-3 text-left">
+                              </div>
+                              <!-- <div class="row mt-3 text-left">
                                 <div class="col-3">
-                                  <h6>Fine hours</h6>
-                                  <p>0h 0m</p>
+                                  <h6>Comp Off</h6>
+                                  <h4 class="f-w-600">2</h4>
                                 </div>
                                 <div class="col-3">
                                   <h6>Deactivated</h6>
-                                  <p>0</p>
+                                  <h4 class="f-w-600">0</h4>
                                 </div>
                               </div>
-                            </div>
-                            <div class="card-footer">
+                            </div> -->
+                            <div class="p-4">
                               <button class="btn btn-outline-light btn-sm">Upcoming leaves in 7 days: 0<span class="btn btn-link">></span> </button>
                               <button class="btn btn-outline-light btn-sm">Daily Work Entries (0)<span class="btn btn-link">></span>                            </button>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                    <div class="container mt-4">
+                        
+                    <div class="mt-4">
                         <h3>Attendance Muster Roll Reports</h3>
-                        <div class="card">
+                        <!-- <div class="card">
                           <div class="p-4">
                         <div class="row mb-4">
                           <div class="col-3">
@@ -462,7 +368,7 @@
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                         <div class="d-flex justify-content-between mb-2">
                           <button class="btn btn-primary">Expand All</button>
                           <div>
@@ -471,15 +377,21 @@
                               <a class="dropdown-item" href="#">Option 1</a>
                               <a class="dropdown-item" href="#">Option 2</a>
                             </div>
-                            <select class="btn btn-light d-inline w-auto"  data-toggle="dropdown">
+                            <!-- <label class="col-form-label">Type Of Report</label> -->
+                        <select class="d-inline btn  btn-square" data-toggle="dropdown" name="select">
+                          <option value="opt1">Select Month</option>
+                          <option value="opt2">Jul 2024</option>
+                          <option value="opt3">July 2024</option>
+                        </select>
+                            <!-- <select class="btn btn-light d-inline w-auto"  data-toggle="dropdown">
                               <option>Jul 2024</option>
                               <option>Jun 2024</option>
-                            </select>
+                            </select> -->
                           </div>
                         </div>
                         <div class="card">
-                          <div class="card-header">
-                            Monthly Regular
+                          <div class="row ml-4">
+                            <h5 class="pl-4">Monthly Regular</h5>
                           </div>
                           <div class="card-body">
                             <table class="table table-bordered attendance-table">
@@ -575,14 +487,6 @@
                                           <th>F</th>
                                           <th>S</th>
                                           <th>S</th>
-                                          <th>M</th>
-                                          <th>T</th>
-                                          <th>W</th>
-                                          <th>T</th>
-                                          <th>F</th>
-                                          <th>S</th>
-                                          <th>S</th>
-                                          <th>W</th>
                                         </tr>
                                       </thead>
                                       <tbody>
@@ -599,19 +503,13 @@
                                           <td>-</td>
                                           <td>-</td>
                                           <td>-</td>
+                                          <td>P</td>
                                           <td>-</td>
                                           <td>-</td>
                                           <td>-</td>
+                                          <td>A</td>
                                           <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
+                                          <td>A</td>
                                           <td>-</td>
                                           <td>-</td>
                                           <td>-</td>
@@ -810,12 +708,12 @@
     }
 
     $(document).ready(function() {
-      $('.arrow').click(function() {
+    $('.arrow').click(function() {
         var target = $(this).data('target');
         $(target).toggleClass('expanded');
         $(this).find('.fas').toggleClass('fa-angle-down fa-angle-up');
-      });
     });
+});
     </script>
     <!-- login js-->
     <!-- Plugin used-->

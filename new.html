@@ -1,110 +1,382 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equal Height Columns</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    .row-flex {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .left_part, .right-part {
-      display: flex;
-      flex-direction: column;
-    }
-    .left_part .card, .right-part .card {
-      flex: 1;
-    }
-    .circle {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 10px auto;
-    }
-    .things-to-do {
-      text-align: center;
-    }
-    .attendance-card-header {
-      background-color: #f7f7f7;
-    }
-  </style>
-</head>
-<body>
-  <div class="container mt-4">
-    <div class="row row-flex">
-      <div class="col-md-4 left_part">
+<div class="page-body">
+    <div class="attendance-summary">
         <div class="card">
-          <div class="card-header attendance-card-header">
-            <div class="things-to-do">
-              <div class="circle">
-                <span class="check-mark">✔️</span>
-              </div>
-              <h5>All Done</h5>
+            <div class="card-header">
+                <h5>Attendance Summary</h5>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8 right-part">
-        <div class="card attendance-card">
-          <div class="card-header attendance-card-header">
-            <div class="d-flex justify-content-between align-items-center">
-              <button class="btn btn-link"><</button>
-              <h5>29 Jun 2024 | Sat</h5>
-              <button class="btn btn-link">></button>
+            <div class="card-header">
+                <h5>Attendance Summary</h5>
             </div>
-            <a href="#" class="btn btn-link">Detailed Attendance View</a>
-          </div>
-          <div class="card-body attendance-card-body">
-            <div class="row">
-              <div class="col">
-                <h6>Present</h6>
-                <p>13</p>
-              </div>
-              <div class="col">
-                <h6>Absent</h6>
-                <p>0</p>
-              </div>
-              <div class="col">
-                <h6>Not Marked</h6>
-                <p>0</p>
-              </div>
-              <div class="col">
-                <h6>Half Day</h6>
-                <p>0</p>
-              </div>
-              <div class="col">
-                <h6>On Leave</h6>
-                <p>0</p>
-              </div>
+            <div class="card-header">
+                <h5>Attendance Summary</h5>
             </div>
-            <div class="row mt-3 text-left">
-              <div class="col-3">
-                <h6>Fine hours</h6>
-                <p>0h 0m</p>
-              </div>
-              <div class="col-3">
-                <h6>Deactivated</h6>
-                <p>0</p>
-              </div>
+            <div class="card-header">
+                <h5>Attendance Summary</h5>
             </div>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-outline-primary btn-sm">Upcoming leaves in 7 days: 0</button>
-            <button class="btn btn-outline-primary btn-sm">Daily Work Entries (0)</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            <div class="card-header">
+                <h5>Attendance Summary</h5>
+            </div>
+            <div class="">
+                <div class="row mb-4">
+                    <div class="col-lg-4 col-md-12 col-sm-12 text-lg-left text-md-center text-center mb-3 mb-lg-0">
+                        <button class="datebtn btn-light">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span>03 Jul 2024 | WED</span>
+                        <button class="datebtn btn-light">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="datebtn btn-light" onclick="openDatePicker()">
+                            <i class="fas fa-calendar-alt"></i>
+                        </button>
+                        <input type="date" id="hiddenDateInput" style="display: none;">
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                        <div class="row text-center">
+                            <div class="col-lg-2 col-md-4 col-sm-4 mb-3 mb-lg-0">
+                                <div>Total Staff</div>
+                                <div><strong>13</strong></div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 mb-3 mb-lg-0">
+                                <div>Present</div>
+                                <div><strong>6</strong></div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 mb-3 mb-lg-0">
+                                <div>Absent</div>
+                                <div><strong>1</strong></div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 mb-3 mb-lg-0">
+                                <div>Half Day</div>
+                                <div><strong>0</strong></div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 mb-3 mb-lg-0">
+                                <div>Comp Off</div>
+                                <div><strong>2</strong></div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 mb-3 mb-lg-0">
+                                <div>Paid Leave</div>
+                                <div><strong>0</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+                <!-- <div class="card p-2">
+                <div class="row text-left">
+                    <div class="col-2">
+                        <button class="btn">
+                            <i class="fas fa-suitcase text-primary"></i> Leaves
+                        </button>
+                        </div>
+                        <div class="col-8">
+                        <button class="btn">
+                            <i class="fas fa-plus-square text-primary"></i> Bulk Add Work (Work Basis)
+                        </button>
+                    </div>
+                </div>
+                </div> -->
+
+                <div class="mr-4">
+                <div class="row justify-content-end search-bar mb-2">
+                    <!-- <div class="col">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search Staff">
+                    </div> -->
+                    <div class="col-4 text-right">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Search Staff">
+                        </div>
+                      </div>
+                </div>
+                <!-- <div class="row text-left">
+                    <div class="col-2 text-left">
+                        <span>Not Assigned <span class="badge badge-secondary">12</span></span>
+                    </div>
+                </div> -->
+            </div>
+            </div>
+
+        <!-- Staff Listing Section -->
+        <div class="staff-list container">
+            <div class="card mt-2">
+                <div class="card-body row">
+                    <div class="info col-lg-4">
+                        <h6>Deepak Kumar <small>D18</small></h6>
+                        <div>0:00 Hrs</div>
+                        <div>10:25 AM - NA</div>
+                        <div><a class="text-primary" data-bs-toggle="modal" data-bs-target="#viewNoteModal">Add Note</a> | <a class="text-primary" data-bs-toggle="modal" data-bs-target="#viewLogsModal">View Logs</a></div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-md-4 grid-item border bg-success active px-3" data-bs-toggle="modal" data-bs-target="#attendanceModal">P | 10:25 AM - NA</div>
+                            <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#halfModal">HD | Half Day</div>
+                            <div class="col-md-4 grid-item border px-3" onclick="toggleDangerClass(this)">A | Absent</div>
+                            <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#compModal">CO | Comp Off</div>
+                            <div class="col-md-4 grid-item border px-3">L | Paid Leave</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-2">
+                <div class="card-body row">
+                    <div class="info col-lg-4">
+                        <h6>Priya Sharma <small>D19</small></h6>
+                        <div>0:00 Hrs</div>
+                        <div>10:25 AM - NA</div>
+                        <div><a class="text-primary" data-bs-toggle="modal" data-bs-target="#viewNoteModal">Add Note</a> | <a class="text-primary" data-bs-toggle="modal" data-bs-target="#viewLogsModal">View Logs</a></div>
+                    </div>
+                    <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4 grid-item border active bg-success px-3" data-bs-toggle="modal" data-bs-target="#attendanceModal">P | 10:25 AM - NA</div>
+                        <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#halfModal">HD | Half Day</div>
+                        <div class="col-md-4 grid-item border px-3" onclick="toggleDangerClass(this)">A | Absent</div>
+                        <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#compModal">CO | Comp Off</div>
+                        <div class="col-md-4 grid-item border px-3">L | Paid Leave</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="card mt-2">
+                <div class="card-body row">
+                    <div class="info col-lg-4">
+                        <h6>Prachi Rathod <small>D21</small></h6>
+                        <div class="text-danger">Not Marked</div>
+                        <!-- <div>10:25 AM - NA</div> -->
+                        <div><a class="text-primary" data-bs-toggle="modal" data-bs-target="#viewNoteModal">Add Note</a> | <a class="text-primary" data-bs-toggle="modal" data-bs-target="#viewLogsModal">View Logs</a></div>
+                    </div>
+                    <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#attendanceModal">P | 10:25 AM - NA</div>
+                        <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#halfModal">HD | Half Day</div>
+                        <div class="col-md-4 grid-item border deactive bg-danger px-3" onclick="toggleDangerClass(this)">A | Absent</div>
+                        <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#compModal">CO | Comp Off</div>
+                        <div class="col-md-4 grid-item border px-3">L | Paid Leave</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="card mt-2">
+                <div class="card-body row">
+                    <div class="info col-lg-4">
+                        <h6>Amit Kumar <small>D22</small></h6>
+                        <div>0:00 Hrs</div>
+                        <div>10:25 AM - NA</div>
+                        <div><a class="text-primary" data-bs-toggle="modal" data-bs-target="#viewNoteModal">Add Note</a> | <a class="text-primary" data-bs-toggle="modal" data-bs-target="#viewLogsModal">View Logs</a></div>
+                    </div>
+                    <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4 grid-item border active bg-success px-3" data-bs-toggle="modal" data-bs-target="#attendanceModal">P | 10:25 AM - NA</div>
+                        <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#halfModal">HD | Half Day</div>
+                        <div class="col-md-4 grid-item border px-3" onclick="toggleDangerClass(this)">A | Absent</div>
+                        <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#compModal">CO | Comp Off</div>
+                        <div class="col-md-4 grid-item border px-3">L | Paid Leave</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="halfModal" tabindex="-1" role="dialog" aria-labelledby="attendanceModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="attendanceModalLabel">Half Day Thursday</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="attendanceForm">
+                            <div class="row">
+
+                                <div class="col-lg-12 mt-2">
+                                    <label for="inTime">In Time</label>
+                                    <div class="input-group">
+                                        <input type="time" name="inTime" id="inTime" class="form-control" value="03:20" required />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mt-2">
+                                    <label for="outTime">Out Time</label>
+                                    <div class="input-group">
+                                        <input type="time" name="outTime" id="outTime" class="form-control" required />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">Cancel</button>
+                            <button class="btn btn-pill btn-success" type="submit" form="attendanceForm">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="viewLogsModal" tabindex="-1" role="dialog" aria-labelledby="attendanceModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="attendanceModalLabel">View Logs</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 mt-2">
+                                    <div class="log-card">
+                                        <div class="log-card-body">
+                                            <p class="log-card-text">Present added at 02:00 PM on 04/12/2024</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mt-2">
+                                    <div class="log-card">
+                                        <div class="log-card-body">
+                                            <p class="log-card-text">Present added at 02:00 PM on 04/12/2024</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mt-2">
+                                    <div class="log-card">
+                                        <div class="log-card-body">
+                                            <p class="log-card-text">Present added at 02:00 PM on 04/12/2024</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                            <!-- <div class="row">
+                                <div class="col-lg-12 mt-2">
+                                    <p class="card">Present added at 02:00 PM on 04/12/2024</p>
+                                </div>
+                                <div class="col-lg-12 mt-2">
+                                    <p class="card">Present added at 02:00 PM on 04/12/2024</p>
+                                </div>
+                                <div class="col-lg-12 mt-2">
+                                    <p class="card">Present added at 02:00 PM on 04/12/2024</p>
+                                </div>
+                            </div> -->
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">Close</button>
+                            <!-- <button class="btn btn-pill btn-success" type="submit" form="attendanceForm">Submit</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="viewNoteModal" tabindex="-1" role="dialog" aria-labelledby="attendanceModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="attendanceModalLabel">Add Note</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="attendanceForm">
+                            <div class="row">
+                                <div class="col-lg-12 mt-2">
+                                    <label for="outTime">Note</label>
+                                    <div class="input-group">
+                                        <textarea type="text" name="outTime" id="outTime" class="form-control" placeholder="Enter Note" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">Cancel</button>
+                            <button class="btn btn-pill btn-success" type="submit" form="attendanceForm">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="attendanceModal" tabindex="-1" role="dialog" aria-labelledby="attendanceModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="attendanceModalLabel">Present Thursday</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="attendanceForm">
+                            <div class="row">
+
+                                <div class="col-lg-12 mt-2">
+                                    <label for="inTime">In Time</label>
+                                    <div class="input-group">
+                                        <input type="time" name="inTime" id="inTime" class="form-control" required />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mt-2">
+                                    <label for="outTime">Out Time</label>
+                                    <div class="input-group">
+                                        <input type="time" name="outTime" id="outTime" class="form-control" required />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">Cancel</button>
+                            <button class="btn btn-pill btn-success" type="submit" form="attendanceForm">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="compModal" tabindex="-1" role="dialog" aria-labelledby="attendanceModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="compModalLabel">Present Thursday</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="attendanceForm">
+                            <div class="row">
+
+                                <div class="col-lg-12 mt-2">
+                                    <label for="inTime">Worked Holiday</label>
+                                        <select class="form-select digits" id="exampleFormControlSelect9">
+                                            <option disabled selected>Select Worked Holiday</option>
+                                            <option>3rd Jan 2024</option>
+                                            <option>7th Jan 2024</option>
+                                            <option>12th Apr 2024</option>
+                                        </select>
+                                    <!-- <label for="inTime">In Time</label>
+                                    <div class="input-group">
+                                        <input type="time" name="inTime" id="inTime" class="form-control" required />
+                                    </div> -->
+                                </div>
+                                <div class="col-lg-12 mt-2">
+                                    <label for="outTime">Enter Compensation Day</label>
+                                    <div class="input-group">
+                                        <input type="date" name="leave_day" id="leave_day" class="form-control" value="04-07-2024" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">Cancel</button>
+                            <button class="btn btn-pill btn-success" type="submit" form="attendanceForm">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
