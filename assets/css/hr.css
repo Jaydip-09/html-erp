@@ -1,0 +1,164 @@
+.class {
+    width: 95%;
+    color: darkgray;
+}
+
+.card-header h5 {
+    font-weight: bold;
+}
+
+.staff-card {
+    border: 1px solid #ddd;
+}
+
+.staff-card .card-body {
+    padding: 10px;
+}
+
+.customNet {
+    margin: 0px 30px;
+}
+
+.customcustom {
+    margin-left: 500px;
+}
+
+.customTop {
+    margin-left: 30px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.month-card {
+    cursor: pointer;
+}
+
+.custom-new {
+    margin-left: 20px;
+}
+
+.month-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header {
+    cursor: pointer;
+}
+
+.due-amount {
+    font-weight: bold;
+}
+
+.details {
+    display: none;
+}
+
+.details.show {
+    display: block;
+}
+
+h5 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.text-muted {
+    font-size: 0.875rem;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+.py-2 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.fas {
+    color: #6c757d;
+}
+
+.fas.fa-chevron-down {
+    transition: transform 0.3s;
+}
+
+.details.show+.fas.fa-chevron-down {
+    transform: rotate(180deg);
+}
+.class {
+    width: 95%;
+    color: darkgray;
+}
+.info-section {
+display: none;
+}
+.custom-section{
+padding-left: 60px;
+
+}
+.info-section.border-bottom {
+margin-right: 60px;
+}
+.info-section.active {
+display: block;
+}
+.u-pearl {
+cursor: pointer;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}
+.card-body {
+padding-left: 60px;
+padding-right: 60px;
+}
+.class {
+    width: 95%;
+    color: darkgray;
+}
+.info-section {
+    display: none;
+}
+.info-section.active {
+    display: block;
+}
+.u-pearl {
+    cursor: pointer;
+}
+body {
+    background-color: #f8f9fa;
+}
+.card {
+    margin: 20px 0;
+}
+.icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+.class {
+    width: 95%;
+    color: darkgray;
+}
+.card-header h5 {
+    font-weight: bold;
+}
+.staff-card {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.staff-card .card-body {
+    padding: 10px;
+    padding-left: 30px;
+}

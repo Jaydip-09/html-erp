@@ -46,20 +46,60 @@
     <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/hr.css">
     <style>
-        .class {
-            width: 95%;
-            color: darkgray;
+        .attendance-container {
+            padding: 20px;
         }
-        .info-section {
-            display: none;
+        .row-flex {
+            display: flex;
+            align-items: stretch;
         }
-        .info-section.active {
-            display: block;
+        .things-to-do {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            flex: 1;
         }
-        .u-pearl {
-            cursor: pointer;
+        .things-to-do .circle {
+            border: 2px solid #007bff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
         }
+        .attendance-card {
+            border-radius: 10px;
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+        }
+        .attendance-card-header,
+        .attendance-card-body,
+        .card-footer {
+            flex: none;
+        }
+        .attendance-card-body {
+            flex: 1;
+            text-align: center;
+        }
+        .attendance-table th, .attendance-table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+    .calendar {
+      display: none;
+    }
+    .expanded .calendar {
+      display: table-row-group;
+    }
+    .arrow {
+      cursor: pointer;
+    }
     </style>
 </head>
 
@@ -210,11 +250,10 @@
                                     <a class="nav-link menu-title" href="javascript:void(0)"><i
                                         data-feather="grid"></i><span>HR</span></a>
                                     <ul class="nav-submenu menu-content">
+                                        <li><a href="hr_dashboard.html">Dashboard</a></li>
                                       <li><a href="hr_staff.html">Staff</a></li>
-                                      <li><a href="hr_addStaff.html">ADD Staff</a></li>
-                                      <li><a href="hr_staffProfile.html">Profile</a></li>
                                        <li><a href="hr_staffSalary.html">Salary Overview</a></li>
-                                      <!--<li><a href="Inventory.html">Inventory</a></li> -->
+                                       <li><a href="hr_leave.html">Staff Leave</a></li>
                                     </ul>
                                   </li>
                             </ul>
@@ -228,18 +267,22 @@
 
                 <div class="page-header dash-breadcrumb py-3">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-6">
                             <h3 class="f-w-600">Add Staff</h3>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <a href="hr_staffProfile.html" class="text-black"><button
+                                    class="btn btn-pill btn-primary mx-2">Back</button></a>
                         </div>
                     </div>
                 </div>
                 <div class="container-fluid">
                     <div class="ps-0">
-                        <div class="tab-content mb-4 bg-primary">
+                        <div class="">
                             <div class="tab-pane fade active show" id="pills-created" role="tabpanel"
                                 aria-labelledby="pills-created-tab">
-                                <div class="card shadow mb-0 border">
-                    <div class="card-header row">
+                                <div class="card shadow mb-0 border p-2">
+                    <div class="row">
                         <h5 class="mb-0 ml-6"><div class="post-header">
                             <div class="row">
                             <div class="media col-9"><img class="img-thumbnail rounded-circle me-3" src="/assets/images/avtar/7.jpg" alt="profile">
@@ -260,7 +303,6 @@
                                         <li><a class="dropdown-item" href="#">Delete Staff</a></li>
                                     </ul>
                                 </div>
-                                <button class="btn btn-pill btn-primary">Invite</button>
                             </div>
                             </div>
                             </div>
@@ -295,32 +337,28 @@
                                     <div id="profile-info" class="info-section">
                                         <form id="staffForm">
                                             <div class="wizard-step active" id="personalDetails">
-                                              <h6 class="p-2">Personal Details</h6>
-                                              <hr />
-                                              <div class="row">
+                                                <div class="dash-breadcrumb mt-4">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h5 class="f-w-600">Profile Information</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr />                                              
+                                                <div class="row">
                                                 <div class="col-3">
                                                   <div class="form-group">
-                                                    <label for="email">Email</label>
+                                                    <label for="first_name">First Name</label>
                                                     <input
                                                       type="text"
                                                       class="form-control"
-                                                      id="email"
-                                                      name="email"
-                                                      placeholder="Enter Email"
-                                                      required
+                                                      id="first_name"
+                                                      name="first_name"
+                                                      placeholder="Enter First Name"
                                                     />
                                                   </div>
                                                 </div>
-                                                <div class="col-3">
-                                                    <label>Gender</label>
-                                                    <select class="form-select digits" id="exampleFormControlSelect9">
-                                                        <option disabled selected>Select Gender</option>
-                                                        <option>Trainer</option>
-                                                        <option>Peon</option>
-                                                        <option>Accountant</option>
-                                                        <option>Manager</option>
-                                                    </select>
-                                                </div>
+                                                
                                                 <div class="col-3">
                                                     <div class="form-group">
                                                       <label for="middle_name">Middle Name</label>
@@ -330,7 +368,6 @@
                                                         id="middle_name"
                                                         name="middle_name"
                                                         placeholder="Enter Middle name"
-                                                        required
                                                       />
                                                     </div>
                                                   </div>
@@ -343,16 +380,24 @@
                                                         id="last_name"
                                                         name="last_name"
                                                         placeholder="Enter Last name"
-                                                        required
                                                       />
                                                     </div>
                                                   </div>
-                                                  
+                                                  <div class="col-3">
+                                                    <label>Designation</label>
+                                                    <select class="form-select digits" id="exampleFormControlSelect9">
+                                                        <option disabled selected>Select Designation</option>
+                                                        <option>Trainer</option>
+                                                        <option>Peon</option>
+                                                        <option>Accountant</option>
+                                                        <option>Manager</option>
+                                                    </select>
+                                                </div>
                                                  
                                                 <div class="col-3">
                                                     <div class="form-group">
                                                       <label for="role">Staff Type</label>
-                                                      <select class="form-select" id="role" name="role" required>
+                                                      <select class="form-select" id="role" name="role">
                                                         <option disabled selected>Selected Staff Type</option>
                                                         <option value="Regular">Regular</option>
                                                         <option value="Contract">Contract</option>
@@ -369,23 +414,23 @@
                                                       id="contact"
                                                       name="contact"
                                                       placeholder="Enter Contact"
-                                                      required
+                                                      
                                                     />
                                                   </div>
                                                 </div>
                                                 <div class="col-3">
                                                     <div class="form-group">
-                                                      <label for="reporting_manager">Reporting Manager</label>
-                                                      <input
-                                                        type="text"
-                                                        class="form-control"
-                                                        id="reporting_manager"
-                                                        name="reporting_manager"
-                                                        min="0"
-                                                        placeholder="Enter Reporting Manager"
-                                                        required
-                                                      />
+                                                        <label for="reporting_manager">Reporting Manager</label>
+                                                        <select class="form-select" id="role" name="role" >
+                                                        <option disabled selected>Select Reporting Manager</option>
+                                                        <option value="Regular">Mishra</option>
+                                                        <option value="Contract">sharma</option>
+                                                        <option value="Work Basis">Gupta</option>
+                                                      </select>
                                                     </div>
+                                                  </div>
+                                                  <div class="d-flex justify-content-end">
+                                                    <button type="submit" class="btn btn-pill btn-primary">Next</button>
                                                   </div>
                                               </div>
                                             </div>
@@ -395,7 +440,13 @@
                                     <div id="personal-info" class="info-section active">
                                             <form id="staffForm">
                                                 <div class="wizard-step active" id="personalDetails">
-                                                    <h6 class="p-2">Personal Details</h6>
+                                                    <div class="dash-breadcrumb mt-4">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <h5 class="f-w-600">Personal Information</h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <hr />
                                                     <div class="row">
                                                         <div class="col-3">
@@ -407,7 +458,7 @@
                                                                     id="email"
                                                                     name="email"
                                                                     placeholder="Enter Email"
-                                                                    required
+                                                                    
                                                                 />
                                                             </div>
                                                         </div>
@@ -421,7 +472,6 @@
                                                                         name="gender"
                                                                         id="male"
                                                                         value="male"
-                                                                        required
                                                                     />
                                                                     <label class="form-check-label" for="male">
                                                                         Male
@@ -434,7 +484,6 @@
                                                                         name="gender"
                                                                         id="female"
                                                                         value="female"
-                                                                        required
                                                                     />
                                                                     <label class="form-check-label" for="female">
                                                                         Female
@@ -450,35 +499,32 @@
                                                                     class="form-control"
                                                                     id="dob"
                                                                     name="dob"
-                                                                    required
                                                                 />
                                                             </div>
                                                         </div>
                                                         <div class="col-3">
                                                             <div class="form-group">
                                                                 <label for="marital_status">Marital Status</label>
-                                                                <input
-                                                                    type="text"
-                                                                    class="form-control"
-                                                                    id="marital_status"
-                                                                    name="marital_status"
-                                                                    placeholder="Enter Marital Status"
-                                                                    required
-                                                                />
+                                                                <select class="form-select" id="role" name="role" >
+                                                                <option disabled selected>Select Marital Status</option>
+                                                                <option value="Regular">Married</option>
+                                                                <option value="Contract">Single</option>
+                                                              </select>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-3">
-                                                            <div class="form-group">
-                                                                <label for="blood_group">Blood Group</label>
-                                                                <input
-                                                                    type="text"
-                                                                    class="form-control"
-                                                                    id="blood_group"
-                                                                    name="blood_group"
-                                                                    placeholder="Enter Blood Group"
-                                                                    required
-                                                                />
-                                                            </div>
+                                                          </div>
+                                                          <div class="col-3">
+                                                            <label>Blood Group</label>
+                                                            <select class="form-select digits" id="exampleFormControlSelect9">
+                                                                <option disabled selected>Select Blood Group</option>
+                                                                <option>A+</option>
+                                                                <option>A-</option>
+                                                                <option>O+</option>
+                                                                <option>O-</option>
+                                                                <option>B+</option>
+                                                                <option>B-</option>
+                                                                <option>AB+</option>
+                                                                <option>AB-</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col-3">
                                                             <div class="form-group">
@@ -489,21 +535,36 @@
                                                                     id="contact"
                                                                     name="contact"
                                                                     placeholder="Enter Emergency Contact"
-                                                                    required
                                                                 />
                                                             </div>
                                                         </div>
                                                         <div class="col-3">
-                                                            <div class="form-group">
-                                                                <label for="physically_challenged">Physically Challenged</label>
-                                                                <input
-                                                                    type="text"
-                                                                    class="form-control"
-                                                                    id="physically_challenged"
-                                                                    name="physically_challenged"
-                                                                    placeholder="Enter Physically Challenged Status"
-                                                                    required
-                                                                />
+                                                            <label>Physically Challenged</label>
+                                                            <div class="d-flex">
+                                                                <div class="form-check me-3">
+                                                                    <input
+                                                                        class="form-check-input"
+                                                                        type="radio"
+                                                                        name="gender"
+                                                                        id="male"
+                                                                        value="male"
+                                                                    />
+                                                                    <label class="form-check-label" for="male">
+                                                                        No
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input
+                                                                        class="form-check-input"
+                                                                        type="radio"
+                                                                        name="gender"
+                                                                        id="female"
+                                                                        value="female"
+                                                                    />
+                                                                    <label class="form-check-label" for="female">
+                                                                        No
+                                                                    </label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-3">
@@ -515,7 +576,6 @@
                                                                     id="father_name"
                                                                     name="father_name"
                                                                     placeholder="Enter Father's Name"
-                                                                    required
                                                                 />
                                                             </div>
                                                         </div>
@@ -528,7 +588,6 @@
                                                                     id="mother_name"
                                                                     name="mother_name"
                                                                     placeholder="Enter Mother's Name"
-                                                                    required
                                                                 />
                                                             </div>
                                                         </div>
@@ -544,30 +603,108 @@
                                                                 />
                                                             </div>
                                                         </div>
+                                                        <hr />
+                                                        <div class="row mb-2">
+                                                            <p>current Address:</p>
+                                                        </div>
                                                         <div class="col-3">
                                                             <div class="form-group">
-                                                                <label for="current_address">Current Address</label>
+                                                                <label for="addressline1">Address Line1</label>
                                                                 <input
                                                                     type="text"
                                                                     class="form-control"
-                                                                    id="current_address"
-                                                                    name="current_address"
-                                                                    placeholder="Enter Current Address"
+                                                                    id="addressline1"
+                                                                    name="addressline1"
+                                                                    placeholder="Enter Address Line1"
                                                                 />
                                                             </div>
                                                         </div>
                                                         <div class="col-3">
                                                             <div class="form-group">
-                                                                <label for="permanent_address">Permanent Address</label>
+                                                                <label for="addressline1">Address Line2</label>
                                                                 <input
                                                                     type="text"
                                                                     class="form-control"
-                                                                    id="permanent_address"
-                                                                    name="permanent_address"
-                                                                    placeholder="Enter Permanent Address"
-                                                                    required
+                                                                    id="addressline1"
+                                                                    name="addressline1"
+                                                                    placeholder="Enter Address Line2"
                                                                 />
                                                             </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <label>State</label>
+                                                            <select class="form-select digits" id="exampleFormControlSelect9">
+                                                                <option disabled selected>Select State</option>
+                                                                <option>Gujarat</option>
+                                                                <option>Maharastra</option>
+                                                                <option>Madhya Pradesh</option>
+                                                                <option>Odisha</option>
+                                                                <option>Bihar</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <label>City</label>
+                                                            <select class="form-select digits" id="exampleFormControlSelect9">
+                                                                <option disabled selected>Select City</option>
+                                                                <option>Ahmedabad</option>
+                                                                <option>Mehsana</option>
+                                                                <option>Gandhinagar</option>
+                                                                <option>Surat</option>
+                                                            </select>
+                                                        </div>
+                                                        <hr />
+                                                        <div class="row mb-2">
+                                                            <p>Permenant Address:</p>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-group">
+                                                                <label for="addressline1">Address Line1</label>
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    id="addressline1"
+                                                                    name="addressline1"
+                                                                    placeholder="Enter Address Line1"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-group">
+                                                                <label for="addressline1">Address Line2</label>
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    id="addressline1"
+                                                                    name="addressline1"
+                                                                    placeholder="Enter Address Line2"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <label>State</label>
+                                                            <select class="form-select digits" id="exampleFormControlSelect9">
+                                                                <option disabled selected>Select State</option>
+                                                                <option>Gujarat</option>
+                                                                <option>Maharastra</option>
+                                                                <option>Madhya Pradesh</option>
+                                                                <option>Odisha</option>
+                                                                <option>Bihar</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <label>City</label>
+                                                            <select class="form-select digits" id="exampleFormControlSelect9">
+                                                                <option disabled selected>Select City</option>
+                                                                <option>Ahmedabad</option>
+                                                                <option>Mehsana</option>
+                                                                <option>Gandhinagar</option>
+                                                                <option>Surat</option>
+                                                            </select>
+                                                        </div>
+                                                        
+                                                        <div class="d-flex justify-content-end">
+                                                            <button type="button" class="btn btn-pill btn-secondary mx-2" onclick="showInfo('profile-info', 1)">Back</button>
+                                                            <button type="submit" class="btn btn-pill btn-primary" onclick="showInfo('employment-info', 3)">Next</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -577,9 +714,14 @@
                                     <div id="employment-info" class="info-section">
                                         <form id="staffForm">
                                             <div class="wizard-step active" id="personalDetails">
-                                              <h6 class="p-2">Employment Information</h6>
-                                              <hr />
-                                              <div class="row">
+                                                <div class="dash-breadcrumb mt-4">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h5 class="f-w-600">Employment Information</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr />                                              <div class="row">
                                                 <div class="col-3">
                                                     <div class="form-group">
                                                         <label for="dob">Date of Joining</label>
@@ -588,7 +730,7 @@
                                                             class="form-control"
                                                             id="dob"
                                                             name="dob"
-                                                            required
+                                                            
                                                         />
                                                     </div>
                                                 </div>
@@ -601,7 +743,7 @@
                                                         id="middle_name"
                                                         name="middle_name"
                                                         placeholder="Enter UAN"
-                                                        required
+                                                        
                                                       />
                                                     </div>
                                                   </div>
@@ -614,7 +756,7 @@
                                                         id="middle_name"
                                                         name="middle_name"
                                                         placeholder="Enter PAN"
-                                                        required
+                                                        
                                                       />
                                                     </div>
                                                   </div>
@@ -628,22 +770,31 @@
                                                       id="contact"
                                                       name="contact"
                                                       placeholder="Enter Contact"
-                                                      required
+                                                      
                                                     />
                                                   </div>
                                                 </div>
-                                               
-                                              </div>
+                                                <div class="d-flex justify-content-end">
+                                                    <button type="button" class="btn btn-pill btn-secondary mx-2" onclick="showInfo('personal-info', 2)">Back</button>
+                                                    <button type="submit" class="btn btn-pill btn-primary" onclick="showInfo('bank-info', 4)">Next</button>
+                                                </div>
                                             </div>
+                                        </div>
                                         </form>
                                     </div>
                                     
                                     <div id="bank-info" class="info-section">
                                         <form id="staffForm">
                                             <div class="wizard-step active" id="personalDetails">
-                                              <h6 class="p-2">Bank Information</h6>
-                                              <hr />
-                                              <div class="row">
+                                                <div class="dash-breadcrumb mt-4">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h5 class="f-w-600">Bank Information</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr />                                              
+                                                <div class="row">
                                                 <div class="col-3">
                                                     <div class="form-group">
                                                       <label for="middle_name">Name of Bank</label>
@@ -653,7 +804,7 @@
                                                         id="middle_name"
                                                         name="middle_name"
                                                         placeholder="Enter Bank Name"
-                                                        required
+                                                        
                                                       />
                                                     </div>
                                                   </div>
@@ -666,7 +817,7 @@
                                                         id="middle_name"
                                                         name="middle_name"
                                                         placeholder="Enter UAN"
-                                                        required
+                                                        
                                                       />
                                                     </div>
                                                   </div>
@@ -679,7 +830,7 @@
                                                       id="contact"
                                                       name="contact"
                                                       placeholder="Enter Account Number"
-                                                      required
+                                                      
                                                     />
                                                   </div>
                                                 </div>
@@ -692,13 +843,13 @@
                                                         id="contact"
                                                         name="contact"
                                                         placeholder="Enter Name of Account Holder"
-                                                        required
+                                                        
                                                       />
                                                     </div>
                                                   </div>
                                                   <div class="d-flex justify-content-end">
-                                                    <!-- <button type="button" class="btn btn-pill btn-secondary mx-2" id="backToPersonalDetails">Back</button> -->
-                                                    <button type="submit" class="btn btn-pill btn-primary">Submit</button>
+                                                    <button type="button" class="btn btn-pill btn-secondary mx-2" onclick="showInfo('employment-info', 3)">Back</button>
+                                                    <button type="submit" class="btn btn-pill btn-primary" onclick=nextFunction()>Submit</button>
                                                   </div>
                             
                                               </div>
@@ -711,6 +862,7 @@
                         </div> <!-- End col-sm-12 -->
                     </div> 
             </div>
+        </div>
         </div>
             <!-- Container-fluid Ends-->
             <!-- footer start-->
@@ -772,11 +924,17 @@
         function myFunction() {
             window.location.href = "editBill.html"
         }
+        function nextFunction() {
+            
+        }
+        function backFunction() {
+
+        }
         function selectedVendor() {
             selectElement = document.querySelector('#select1');
             output = selectElement.value;
             document.querySelector('.output').textContent = output;
-            if (output === 'Vendor A') {
+            if (output === 'Gujarat') {
                 document.querySelector('.number').textContent = '1234567890'
                 document.querySelector('.bankName').textContent = 'XYZ'
                 document.querySelector('.bankBranch').textContent = 'ABC'
