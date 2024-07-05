@@ -162,3 +162,13 @@ body {
     padding: 10px;
     padding-left: 30px;
 }
+.position-sticky
+{
+    top: 20%;
+}
+.email-app-sidebar{
+height: 100vh;
+}
+.class{
+    background-color: red;
+}
