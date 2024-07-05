@@ -47,7 +47,7 @@
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/hr.css">
-    
+
 </head>
 
 <body>
@@ -195,715 +195,540 @@
                                 </li>
                                 <li class="dropdown">
                                     <a class="nav-link menu-title" href="javascript:void(0)"><i
-                                        data-feather="grid"></i><span>HR</span></a>
+                                            data-feather="grid"></i><span>HR</span></a>
                                     <ul class="nav-submenu menu-content">
                                         <li><a href="hr_dashboard.html">Dashboard</a></li>
-                                      <li><a href="hr_staff.html">Staff</a></li>
-                                       <li><a href="hr_staffSalary.html">Salary Overview</a></li>
-                                       <li><a href="hr_leave.html">Staff Leave</a></li>
+                                        <li><a href="hr_staff.html">Staff</a></li>
+                                        <li><a href="hr_staffSalary.html">Salary Overview</a></li>
+                                        <li><a href="hr_leave.html">Staff Leave</a></li>
                                     </ul>
-                                  </li>
+                                </li>
                             </ul>
                         </div>
                         <!-- <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div> -->
                     </div>
                 </nav>
             </header>
-            <!-- Page Sidebar Ends-->
             <div class="page-body">
+                <!-- Container-fluid starts-->
+                <div class="container-fluid">
+                    <div class="email-wrap bookmark-wrap">
+                        <div class="row">
+                            <div class="col-xl-3 box-col-4 xl-30">
+                                <div class="md-sidebar-aside">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="email-app-sidebar left-bookmark">
+                                                <div class="media">
+                                                    <div class="media-size-email"><img class="me-3 rounded-circle"
+                                                            src="../assets/images/user/user.png" alt=""></div>
+                                                    <div class="media-body">
+                                                        <h6 class="f-w-600">MARK JENCO</h6>
+                                                        <p>Markjecno@gmail.com</p>
+                                                    </div>
+                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <hr>
+                                                    </li>
+                                                </ul>
+                                                <ul class="nav main-menu" role="tablist">
+                                                    <li><a id="pills-created-tab" data-bs-toggle="pill"
+                                                            href="#pills-created" role="tab"
+                                                            aria-controls="pills-created" aria-selected="true"><span
+                                                                class="title">Profile</span></a></li>
+                                                    <li><a id="" data-bs-toggle="pill" href="" role="tab"
+                                                            aria-controls="pills-created" aria-selected="false"><span
+                                                                class="title">Attendance</span></a></li>
+                                                    <li><a class="show" id="pills-todaytask-tab" data-bs-toggle="pill"
+                                                            href="#pills-todaytask" role="tab"
+                                                            aria-controls="pills-todaytask" aria-selected="false"><span
+                                                                class="title">Salary Structure</span></a></li>
+                                                    <li><a class="show" id="pills-delayed-tab" data-bs-toggle="pill"
+                                                            href="#pills-delayed" role="tab"
+                                                            aria-controls="pills-delayed" aria-selected="false"><span
+                                                                class="title">Holiday Template</span></a></li>
+                                                    <li>
+                                                        <hr>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-9 col-md-12 box-col-8 xl-70">
+                                <!-- Personal  -->
 
-                <div class=" dash-breadcrumb m-1">
-                    <div class="row">
-                        <div class="col-6">
-                            <h5 class="f-w-600">Staff Profile</h5>
-                        </div>
-                        <div class="col-6 d-flex justify-content-end">
-                            <a href="hr_staff.html" class="text-black"><button
-                                    class="btn btn-pill btn-primary mx-2">Back</button></a>
+                                <div class="email-right-aside bookmark-tabcontent">
+                                    <div class="card email-body radius-left">
+                                        <div class="ps-0">
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade active show" id="pills-created"
+                                                    role="tabpanel" aria-labelledby="pills-created-tab">
+                                                    <div class="mb-0">
+                                                        <!-- <div class="row mt-4 custom-section">
+                                                            <div class="col-8">
+                                                                <h5 class="f-w-600">Profile Information</h5>
+                                                            </div>
+                                                            <div class="col-3 d-flex justify-content-end">
+                                                                <a href="hr_addStaff.html">
+                                                                    <button
+                                                                        class="btn btn-pill btn-light mx-2 text-primary">
+                                                                        <i class="icondt text-primary fa fa-pen"
+                                                                            data-bs-toggle="modal"
+                                                                            data-original-title="test"
+                                                                            data-bs-target="#exampleModal" title="Edit"
+                                                                            onclick=myFunction()></i>&nbsp;&nbsp;Edit
+                                                                    </button>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="border-bottom mb-4 mt-3 mr-4"></div>
+                                                        <div class="row custom-section">
+                                                            <div class="col-sm-3 mb-3">
+                                                                <div>
+                                                                    <span class="text-secondary">Name</span><br>
+                                                                    <span class="f-w-600">Ankit Kumar Sharma</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3 mb-3">
+                                                                <div>
+                                                                    <span class="text-secondary">ID</span><br>
+                                                                    <span class="f-w-600">D19</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3 mb-3">
+                                                                <div>
+                                                                    <span class="text-secondary">Designation</span><br>
+                                                                    <span class="f-w-600">Electronics Trainer</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3 mb-3">
+                                                                <div>
+                                                                    <span class="text-secondary">Staff Type</span><br>
+                                                                    <span class="f-w-600">Regular</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3 mb-3">
+                                                                <div>
+                                                                    <span class="text-secondary">contact Manager</span><br>
+                                                                    <span class="f-w-600">8126312345</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3 mb-3">
+                                                                <div>
+                                                                    <span class="text-secondary">Reporting Manager</span><br>
+                                                                    <span class="f-w-600">Monaj Vyas</span>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <div id="profile-info" class="info-section">
+                                                            <div class="row mt-4 custom-section">
+                                                                <div class="col-8">
+                                                                    <h5 class="f-w-600">Profile Information</h5>
+                                                                </div>
+                                                                <div class="col-3 d-flex justify-content-end">
+                                                                    <a href="hr_addStaff.html">
+                                                                        <button class="btn btn-pill btn-light mx-2 text-primary">
+                                                                            <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick="myFunction()"></i>&nbsp;&nbsp;Edit
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="border-bottom mb-4 mt-3 mr-4"></div>
+                                                            <div class="row custom-section">
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Name</span><br>
+                                                                        <span class="f-w-600">Ankit Kumar Sharma</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">ID</span><br>
+                                                                        <span class="f-w-600">D19</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Designation</span><br>
+                                                                        <span class="f-w-600">Electronics Trainer</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Staff Type</span><br>
+                                                                        <span class="f-w-600">Regular</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Contact Manager</span><br>
+                                                                        <span class="f-w-600">8126312345</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Reporting Manager</span><br>
+                                                                        <span class="f-w-600">Monaj Vyas</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                    
+                                                        <!-- Personal Information Section -->
+                                                        <div id="personal-info" class="info-section active">
+                                                            <div class="row mt-4 custom-section">
+                                                                <div class="col-8">
+                                                                    <h5 class="f-w-600">Personal Information</h5>
+                                                                </div>
+                                                                <div class="col-3 d-flex justify-content-end">
+                                                                    <a href="hr_addStaff.html">
+                                                                        <button class="btn btn-pill btn-light mx-2 text-primary">
+                                                                            <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick="myFunction()"></i>&nbsp;&nbsp;Edit
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="border-bottom mb-4 mt-3 mr-4"></div>
+                                                            <div class="row custom-section">
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Email</span><br>
+                                                                        <span class="f-w-600">ankit@gmail.com</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Gender</span><br>
+                                                                        <span class="f-w-600">Male</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Date of Birth</span><br>
+                                                                        <span class="f-w-600">16/12/1999</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Marital Status</span><br>
+                                                                        <span class="f-w-600">Single</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Blood Group</span><br>
+                                                                        <span class="f-w-600">O+</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Emergency Contact</span><br>
+                                                                        <span class="f-w-600">7206109761</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Father's Name</span><br>
+                                                                        <span class="f-w-600">Ram Sharma</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Mother's Name</span><br>
+                                                                        <span class="f-w-600">Vidhya Sharma</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Spouse's Name</span><br>
+                                                                        <span class="f-w-600">-</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Physically Challenged</span><br>
+                                                                        <span class="f-w-600">No</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row custom-section">
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Current Address</span><br>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-9 mb-3">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-3 mb-3">
+                                                                            <div>
+                                                                                <span class="text-secondary">Address Line 1</span><br>
+                                                                                <span class="f-w-600">-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-3 mb-3">
+                                                                            <div>
+                                                                                <span class="text-secondary">Address Line 2</span><br>
+                                                                                <span class="f-w-600">-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-3 mb-3">
+                                                                            <div>
+                                                                                <span class="text-secondary">City</span><br>
+                                                                                <span class="f-w-600">-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-3 mb-3">
+                                                                            <div>
+                                                                                <span class="text-secondary">State</span><br>
+                                                                                <span class="f-w-600">-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-3 mb-3">
+                                                                            <div>
+                                                                                <span class="text-secondary">Postal Code</span><br>
+                                                                                <span class="f-w-600">-</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row custom-section">
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Permanent Address</span><br>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-9 mb-3">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-3 mb-3">
+                                                                            <div>
+                                                                                <span class="text-secondary">Address Line 1</span><br>
+                                                                                <span class="f-w-600">Solaris</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-3 mb-3">
+                                                                            <div>
+                                                                                <span class="text-secondary">Address Line 2</span><br>
+                                                                                <span class="f-w-600">Bhuyangdev</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-3 mb-3">
+                                                                            <div>
+                                                                                <span class="text-secondary">City</span><br>
+                                                                                <span class="f-w-600">Ahmedabad</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-3 mb-3">
+                                                                            <div>
+                                                                                <span class="text-secondary">State</span><br>
+                                                                                <span class="f-w-600">Gujarat</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-3 mb-3">
+                                                                            <div>
+                                                                                <span class="text-secondary">Postal Code</span><br>
+                                                                                <span class="f-w-600">382330</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                    
+                                                        <!-- Official Information Section -->
+                                                        <div id="official-info" class="info-section active">
+                                                            <div class="row mt-4 custom-section">
+                                                                <div class="col-8">
+                                                                    <h5 class="f-w-600">Profile Information</h5>
+                                                                </div>
+                                                                <div class="col-3 d-flex justify-content-end">
+                                                                    <a href="hr_addStaff.html">
+                                                                        <button class="btn btn-pill btn-light mx-2 text-primary">
+                                                                            <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick="myFunction()"></i>&nbsp;&nbsp;Edit
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="border-bottom mb-4 mt-3 mr-4"></div>
+                                                            <div class="row custom-section">
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Name</span><br>
+                                                                        <span class="f-w-600">Ankit Kumar Sharma</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">ID</span><br>
+                                                                        <span class="f-w-600">D11</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Date of Joining</span><br>
+                                                                        <span class="f-w-600">23/06/2019</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Date of Confirmation</span><br>
+                                                                        <span class="f-w-600">-</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Date of Resignation</span><br>
+                                                                        <span class="f-w-600">-</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Date of Relieving</span><br>
+                                                                        <span class="f-w-600">-</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                    
+                                                        <!-- Employment Information Section -->
+                                                        <div id="employment-info" class="info-section active">
+                                                            <div class="row mt-4 custom-section">
+                                                                <div class="col-8">
+                                                                    <h5 class="f-w-600">Employment Information</h5>
+                                                                </div>
+                                                                <div class="col-3 d-flex justify-content-end">
+                                                                    <a href="hr_addStaff.html">
+                                                                        <button class="btn btn-pill btn-light mx-2 text-primary">
+                                                                            <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick="myFunction()"></i>&nbsp;&nbsp;Edit
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="border-bottom mb-4 mt-3 mr-4"></div>
+                                                            <div class="row custom-section">
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Department</span><br>
+                                                                        <span class="f-w-600">Electronics</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Sub-Department</span><br>
+                                                                        <span class="f-w-600">--</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Band</span><br>
+                                                                        <span class="f-w-600">D</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Job Title</span><br>
+                                                                        <span class="f-w-600">Electronics Trainer</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Work Location</span><br>
+                                                                        <span class="f-w-600">HO</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Center</span><br>
+                                                                        <span class="f-w-600">Bhuyangdev</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Branch</span><br>
+                                                                        <span class="f-w-600">--</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Status</span><br>
+                                                                        <span class="f-w-600">Approved</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Remarks</span><br>
+                                                                        <span class="f-w-600">New</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                    
+                                                        <!-- Education Information Section -->
+                                                        <div id="education-info" class="info-section active">
+                                                            <div class="row mt-4 custom-section">
+                                                                <div class="col-8">
+                                                                    <h5 class="f-w-600">Education Information</h5>
+                                                                </div>
+                                                                <div class="col-3 d-flex justify-content-end">
+                                                                    <a href="hr_addStaff.html">
+                                                                        <button class="btn btn-pill btn-light mx-2 text-primary">
+                                                                            <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick="myFunction()"></i>&nbsp;&nbsp;Edit
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="border-bottom mb-4 mt-3 mr-4"></div>
+                                                            <div class="row custom-section">
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Degree</span><br>
+                                                                        <span class="f-w-600">Msc. Electronics</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Institution</span><br>
+                                                                        <span class="f-w-600">Karnavati University</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Course</span><br>
+                                                                        <span class="f-w-600">Electronics</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Specialization</span><br>
+                                                                        <span class="f-w-600">--</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 mb-3">
+                                                                    <div>
+                                                                        <span class="text-secondary">Year of Passing</span><br>
+                                                                        <span class="f-w-600">2020</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <hr />
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid">
-                    <div class="ps-0">
-                        <div class="">
-                            <div class="tab-pane fade active show" id="pills-created" role="tabpanel"
-                                aria-labelledby="pills-created-tab">
-                                <div class="staff-card shadow mb-0 border p-2">
-                    <div class="row">
-                        <h5 class="mb-0 ml-6"><div class="post-header">
-                            <div class="row">
-                            <div class="media col-9"><img class="img-thumbnail rounded-circle me-3" src="/assets/images/avtar/7.jpg" alt="profile">
-                              <div class="media-body align-self-center"><a href="social-app.html">
-                                  <h5 class="user-name text-dark">Amit Sharma</h5></a>
-                                <h6>ID 9  Regular</h6>
-                              </div>
-                            </div>
-                            <div class="media col-3 justify-content-end gap-2 mt-3">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-pill btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Active
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item disabled" href="#">Active</a></li>
-                                        <li><a class="dropdown-item" href="#">DeActive</a></li>
-                                        <li><a class="dropdown-item" href="#">Delete Staff</a></li>
-                                    </ul>
-                                </div>                                
-                            </div>
-                            </div>
-                            </div>
-                        </h5>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card">
-                                <!-- <div class="card-body">
-                                    <div class="row p-4">
-                                        <div class="u-pearl done col-3" data-step="1" onclick="showInfo('profile-info', 1)">
-                                            <span class="u-pearl-number">1</span>
-                                            <span class="u-pearl-title">Profile Information</span>
-                                        </div>
-                                        <div class="u-pearl current col-3" data-step="2" onclick="showInfo('personal-info', 2)">
-                                            <span class="u-pearl-number">2</span>
-                                            <span class="u-pearl-title">Personal Information</span>
-                                        </div>
-                                        <div class="u-pearl col-3" data-step="3" onclick="showInfo('employment-info', 3)">
-                                            <span class="u-pearl-number">3</span>
-                                            <span class="u-pearl-title">Employment Information</span>
-                                        </div>
-                                        <div class="u-pearl col-3" data-step="4" onclick="showInfo('bank-info', 4)">
-                                            <span class="u-pearl-number">4</span>
-                                            <span class="u-pearl-title">Bank Details</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div id="profile-info" class="info-section">
-                                        <div class="row mt-4 mb-4">
-                                            <div class="col-6">
-                                                <h5 class="f-w-600">Profile Information</h5>
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                                <a href="hr_addStaff.html">                                                    <button class="btn btn-pill btn-light mx-2 text-primary">
-                                                        <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick=myFunction()></i>&nbsp;&nbsp;Edit
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Name</span><br>
-                                                    <span class="f-w-600">Ankit Kumar Sharma</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">ID</span><br>
-                                                    <span class="f-w-600">D19</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Designation</span><br>
-                                                    <span class="f-w-600">Electronics Trainer</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Staff Type</span><br>
-                                                    <span class="f-w-600">Regular</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">contact Manager</span><br>
-                                                    <span class="f-w-600">8126312345</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Reporting Manager</span><br>
-                                                    <span class="f-w-600">Monaj Vyas</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div id="personal-info" class="info-section active">
-                                        <div class="row mt-4 mb-4">
-                                            <div class="col-8">
-                                                <h5 class="f-w-600">Personal Information</h5>
-                                            </div>
-                                            <div class="col-4 d-flex justify-content-end">
-                                                <a href="hr_addStaff.html">
-                                                    <button class="btn btn-pill btn-light mx-2 text-primary">
-                                                        <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick=myFunction()></i>&nbsp;&nbsp;Edit
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Email</span><br>
-                                                    <span class="f-w-600">Ankit@gmail.com</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Gender</span><br>
-                                                    <span class="f-w-600">Male</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Date of Birth</span><br>
-                                                    <span class="f-w-600">16/12/1999</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Marital Status</span><br>
-                                                    <span class="f-w-600">Single</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Blood Group</span><br>
-                                                    <span class="f-w-600">O+</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Emeregency contact</span><br>
-                                                    <span class="f-w-600">7206109761</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Father's Name</span><br>
-                                                    <span class="f-w-600">Ram Sharma</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Mother's Name</span><br>
-                                                    <span class="f-w-600">Vidhya Sharma</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Spouse's Name</span><br>
-                                                    <span class="f-w-600">-</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Physically challenged</span><br>
-                                                    <span class="f-w-600">No</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Current Address</span><br>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-9 mb-3">
-                                                <div class="row">
-                                                <div class="col-sm-3 mb-3">
-                                                    <div>
-                                                        <span class="text-secondary">Address Line 1</span><br>
-                                                        <span class="f-w-600">-</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3 mb-3">
-                                                    <div>
-                                                        <span class="text-secondary">Address Line 2</span><br>
-                                                        <span class="f-w-600">-</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3 mb-3">
-                                                    <div>
-                                                        <span class="text-secondary">City</span><br>
-                                                        <span class="f-w-600">-</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3 mb-3">
-                                                    <div>
-                                                        <span class="text-secondary">State</span><br>
-                                                        <span class="f-w-600">-</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3 mb-3">
-                                                    <div>
-                                                        <span class="text-secondary">Postal Code</span><br>
-                                                        <span class="f-w-600">-</span>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                            </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3 mb-3">
-                                            <div>
-                                                <span class="text-secondary">Permenant Address</span><br>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-9 mb-3">
-                                            <div class="row">
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Address Line 1</span><br>
-                                                    <span class="f-w-600">Solaris</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Address Line 2</span><br>
-                                                    <span class="f-w-600">Bhuyangdev</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">City</span><br>
-                                                    <span class="f-w-600">Ahmedabad</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">State</span><br>
-                                                    <span class="f-w-600">Gujarat</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Postal Code</span><br>
-                                                    <span class="f-w-600">382470</span>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                </div>
-                                    </div>
-
-                                    <div id="employment-info" class="info-section">
-                                        <div class="row mt-4 mb-4">
-                                            <div class="col-6">
-                                                <h5 class="f-w-600">Employment Information</h5>
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                                <a href="hr_addStaff.html">
-                                                    <button class="btn btn-pill btn-light mx-2 text-primary">
-                                                        <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick=myFunction()></i>&nbsp;&nbsp;Edit
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Date Of Joining</span><br>
-                                                    <span class="f-w-600">01/03/2024</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">UAN</span><br>
-                                                    <span class="f-w-600">-</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">PAN</span><br>
-                                                    <span class="f-w-600">ABCD12345</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Aadhar Number</span><br>
-                                                    <span class="f-w-600">651498146724</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div id="bank-info" class="info-section">
-                                        <div class="row mt-4 mb-4">
-                                            <div class="col-6">
-                                                <h5 class="f-w-600">Bank Details</h5>
-                                            </div>
-                                            <div class="col-6 d-flex justify-content-end">
-                                                <a href="hr_addStaff.html">
-                                                    <button class="btn btn-pill btn-light mx-2 text-primary">
-                                                        <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick=myFunction()></i>&nbsp;&nbsp;Edit
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Name of Bank</span><br>
-                                                    <span class="f-w-600">ICICI</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">IFSC Code</span><br>
-                                                    <span class="f-w-600">ICIC0001234</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Account Number</span><br>
-                                                    <span class="f-w-600">98765432129472</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Name of Account Holder</span><br>
-                                                    <span class="f-w-600">Amit Sharma</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-    
-                                </div>  -->
-                                <div class="mt-3">
-                                    <div class="row p-0 steps-container">
-                                        <div class="u-pearl done col-3" data-step="1" onclick="showInfo('profile-info', 1)">
-                                            <span class="u-pearl-number">1</span>
-                                            <span class="u-pearl-title">Profile Information</span>
-                                        </div>
-                                        <div class="u-pearl current col-3" data-step="2" onclick="showInfo('personal-info', 2)">
-                                            <span class="u-pearl-number">2</span>
-                                            <span class="u-pearl-title">Personal Information</span>
-                                        </div>
-                                        <div class="u-pearl col-3" data-step="3" onclick="showInfo('employment-info', 3)">
-                                            <span class="u-pearl-number">3</span>
-                                            <span class="u-pearl-title">Employment Information</span>
-                                        </div>
-                                        <div class="u-pearl col-3" data-step="4" onclick="showInfo('bank-info', 4)">
-                                            <span class="u-pearl-number">4</span>
-                                            <span class="u-pearl-title">Bank Details</span>
-                                        </div>
-                                    </div>
-                                
-                                    <div id="profile-info" class="info-section">
-                                        <div class="row mt-4 custom-section">
-                                            <div class="col-8">
-                                                <h5 class="f-w-600">Profile Information</h5>
-                                            </div>
-                                            <div class="col-3 d-flex justify-content-end">
-                                                <a href="hr_addStaff.html">                                                    
-                                                    <button class="btn btn-pill btn-light mx-2 text-primary">
-                                                        <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick=myFunction()></i>&nbsp;&nbsp;Edit
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="border-bottom mb-4 mt-3 mr-4"></div>
-
-                                        <div class="row custom-section">
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Name</span><br>
-                                                    <span class="f-w-600">Ankit Kumar Sharma</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">ID</span><br>
-                                                    <span class="f-w-600">D19</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Designation</span><br>
-                                                    <span class="f-w-600">Electronics Trainer</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Staff Type</span><br>
-                                                    <span class="f-w-600">Regular</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">contact Manager</span><br>
-                                                    <span class="f-w-600">8126312345</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Reporting Manager</span><br>
-                                                    <span class="f-w-600">Monaj Vyas</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div id="personal-info" class="info-section active">
-                                        <div class="row mt-4 custom-section">
-                                            <div class="col-8">
-                                                <h5 class="f-w-600">Personal Information</h5>
-                                            </div>
-                                            <div class="col-3 d-flex justify-content-end">
-                                                <a href="hr_addStaff.html">
-                                                    <button class="btn btn-pill btn-light mx-2 text-primary">
-                                                        <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick=myFunction()></i>&nbsp;&nbsp;Edit
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="border-bottom mb-4 mt-3 mr-4"></div>
-
-                                        <div class="row custom-section">
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Email</span><br>
-                                                    <span class="f-w-600">Ankit@gmail.com</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Gender</span><br>
-                                                    <span class="f-w-600">Male</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Date of Birth</span><br>
-                                                    <span class="f-w-600">16/12/1999</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Marital Status</span><br>
-                                                    <span class="f-w-600">Single</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Blood Group</span><br>
-                                                    <span class="f-w-600">O+</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Emeregency contact</span><br>
-                                                    <span class="f-w-600">7206109761</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Father's Name</span><br>
-                                                    <span class="f-w-600">Ram Sharma</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Mother's Name</span><br>
-                                                    <span class="f-w-600">Vidhya Sharma</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Spouse's Name</span><br>
-                                                    <span class="f-w-600">-</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Physically challenged</span><br>
-                                                    <span class="f-w-600">No</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row custom-section">
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Current Address</span><br>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-9 mb-3">
-                                                <div class="row">
-                                                <div class="col-sm-3 mb-3">
-                                                    <div>
-                                                        <span class="text-secondary">Address Line 1</span><br>
-                                                        <span class="f-w-600">-</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3 mb-3">
-                                                    <div>
-                                                        <span class="text-secondary">Address Line 2</span><br>
-                                                        <span class="f-w-600">-</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3 mb-3">
-                                                    <div>
-                                                        <span class="text-secondary">City</span><br>
-                                                        <span class="f-w-600">-</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3 mb-3">
-                                                    <div>
-                                                        <span class="text-secondary">State</span><br>
-                                                        <span class="f-w-600">-</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3 mb-3">
-                                                    <div>
-                                                        <span class="text-secondary">Postal Code</span><br>
-                                                        <span class="f-w-600">-</span>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                            </div>
-                                    </div>
-                                    <div class="row custom-section">
-                                        <div class="col-sm-3 mb-3">
-                                            <div>
-                                                <span class="text-secondary">Permenant Address</span><br>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-9 mb-3">
-                                            <div class="row">
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Address Line 1</span><br>
-                                                    <span class="f-w-600">Solaris</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Address Line 2</span><br>
-                                                    <span class="f-w-600">Bhuyangdev</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">City</span><br>
-                                                    <span class="f-w-600">Ahmedabad</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">State</span><br>
-                                                    <span class="f-w-600">Gujarat</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Postal Code</span><br>
-                                                    <span class="f-w-600">382470</span>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                </div>
-                                    </div>
-                                
-                                    <div id="employment-info" class="info-section">
-                                        <div class="row mt-4 custom-section">
-                                            <div class="col-8">
-                                                <h5 class="f-w-600">Employment Information</h5>
-                                            </div>
-                                            <div class="col-3 d-flex justify-content-end">
-                                                <a href="hr_addStaff.html">
-                                                    <button class="btn btn-pill btn-light mx-2 text-primary">
-                                                        <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick=myFunction()></i>&nbsp;&nbsp;Edit
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="border-bottom mb-4 mt-3 mr-4"></div>
-                                        <div class="row custom-section mb-4">
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Date Of Joining</span><br>
-                                                    <span class="f-w-600">01/03/2024</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">UAN</span><br>
-                                                    <span class="f-w-600">-</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">PAN</span><br>
-                                                    <span class="f-w-600">ABCD12345</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Aadhar Number</span><br>
-                                                    <span class="f-w-600">651498146724</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div id="bank-info" class="info-section">
-                                        <div class="row mt-4 custom-section">
-                                            <div class="col-8">
-                                                <h5 class="f-w-600">Bank Details</h5>
-                                            </div>
-                                            <div class="col-3 d-flex justify-content-end">
-                                                <a href="hr_addStaff.html">
-                                                    <button class="btn btn-pill btn-light mx-2 text-primary">
-                                                        <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal" title="Edit" onclick=myFunction()></i>&nbsp;&nbsp;Edit
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="border-bottom mb-4 mt-3 mr-4"></div>
-
-                                        <div class="row custom-section mb-4">
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Name of Bank</span><br>
-                                                    <span class="f-w-600">ICICI</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">IFSC Code</span><br>
-                                                    <span class="f-w-600">ICIC0001234</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Account Number</span><br>
-                                                    <span class="f-w-600">98765432129472</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <div>
-                                                    <span class="text-secondary">Name of Account Holder</span><br>
-                                                    <span class="f-w-600">Amit Sharma</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                
-
-                            </div>
-                        </div>
-                    </div> 
+                <!-- Container-fluid Ends-->
             </div>
-        </div>
-        </div>
 
             <!-- Container-fluid Ends-->
             <!-- footer start-->
@@ -1051,27 +876,27 @@
             }
         }
         function showInfo(sectionId, step) {
-        // Hide all info sections
-        document.querySelectorAll('.info-section').forEach(section => {
-            section.classList.remove('active');
-        });
-        // Show the selected info section
-        document.getElementById(sectionId).classList.add('active');
+            // Hide all info sections
+            document.querySelectorAll('.info-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Show the selected info section
+            document.getElementById(sectionId).classList.add('active');
 
-        // Update the step classes
-        document.querySelectorAll('.u-pearl').forEach(pearl => {
-            const pearlStep = parseInt(pearl.getAttribute('data-step'));
-            if (pearlStep < step) {
-                pearl.classList.add('done');
-                pearl.classList.remove('current');
-            } else if (pearlStep === step) {
-                pearl.classList.add('current');
-                pearl.classList.remove('done');
-            } else {
-                pearl.classList.remove('done', 'current');
-            }
-        });
-    }
+            // Update the step classes
+            document.querySelectorAll('.u-pearl').forEach(pearl => {
+                const pearlStep = parseInt(pearl.getAttribute('data-step'));
+                if (pearlStep < step) {
+                    pearl.classList.add('done');
+                    pearl.classList.remove('current');
+                } else if (pearlStep === step) {
+                    pearl.classList.add('current');
+                    pearl.classList.remove('done');
+                } else {
+                    pearl.classList.remove('done', 'current');
+                }
+            });
+        }
 
     </script>
     <!-- login js-->
