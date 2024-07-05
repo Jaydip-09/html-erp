@@ -46,6 +46,25 @@
     <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
+    <style>
+        .wizard-step {
+     display: none;
+   }
+   .wizard-step.active {
+     display: block;
+   }
+   .section-title {
+     padding: 10px;
+     background-color: #f1f1f1;
+     font-weight: bold;
+   }
+   .section-content {
+     margin-bottom: 20px;
+   }
+   .modal-body .row {
+     margin-bottom: 10px;
+   }
+   </style>
 </head>
 
 <body>
@@ -166,6 +185,7 @@
                                     <li><a href="category.html">Category</a></li>
                                     <li><a href="career.html">Career</a></li>
                                     <li><a href="postion.html">Position</a></li>
+                                    <li><a href="stock.html">Stock</a></li>
                                   </ul>
                                 </li>
                                 <li class="dropdown">
@@ -188,9 +208,19 @@
                                     <li><a href="tot.html">TOT</a></li>
                                     <li><a href="accreditation.html">accreditation</a></li>
                                     <li><a href="placement.html">Placement</a></li>
+                                    <li><a href="Inventory.html">Inventory</a></li>
                                   </ul>
                                 </li>
-                
+                                <li class="dropdown">
+                                  <a class="nav-link menu-title" href="javascript:void(0)"><i
+                                      data-feather="grid"></i><span>HR</span></a>
+                                  <ul class="nav-submenu menu-content">
+                                      <li><a href="hr_dashboard.html">Dashboard</a></li>
+                                    <li><a href="hr_staff.html">Staff</a></li>
+                                     <li><a href="hr_staffSalary.html">Salary Overview</a></li>
+                                     <li><a href="hr_leave.html">Staff Leave</a></li>
+                                  </ul>
+                                </li>
                               </ul>
                             </div>
                             <!-- <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div> -->
@@ -306,7 +336,95 @@
                     </div>
                 </div>
 
-
+                <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal">Center Delete</h5>
+                      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Are you sure, you want to delete?</p>
+                  
+                    </div>
+                    <div class="modal-footer">
+                      <div class="d-flex justify-content-end">
+                        <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">
+                          Cancel
+                        </button>
+                        <!-- <button class="btn btn-pill btn-primary-gradien mx-2" type="button">Submit</button> -->
+                        <button class="btn btn-pill btn-success" type="button">
+                          Yes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+                <div
+                class="modal fade"
+                id="viewDetailsModal"
+                tabindex="-1"
+                aria-labelledby="viewDetailsModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="viewDetailsModalLabel">View Accreditation</h5>
+                      <button
+                              class="btn-close"
+                              type="button"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Personal Details Section -->
+                      <div class="section-content">
+                        <div class="section-title">Accreditation Details</div>
+                        <div class="row p-2">
+                          <div class="col-6">
+                            <label>Center Name:</label>
+                            <span>Ranchi</span>
+                          </div>
+                          <div class="col-6">
+                            <label>Sector:</label>
+                            <span>Ahmedabad</span>
+                          </div>
+                          <div class="col-6">
+                            <label>Course Name:</label>
+                            <span>Course-1</span>
+                          </div>
+                          <div class="col-6">
+                            <label>Accreditation Date:</label>
+                            <span>06-02-2024</span>
+                          </div>
+                          <div class="col-6">
+                            <label>Expiry Date:</label>
+                            <span>20-05-2025</span>
+                          </div>
+                          <div class="col-6">
+                            <label>Remarks:</label>
+                            <span>Good</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-pill btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
                 <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -430,6 +548,15 @@
                                             <td>-</td>
                                             <td class="d-flex justify-content-center icon">
                                                 <i class="icondt fa fa-pencil" title="Edit accreditation" onclick="myFunction()"></i>
+                                                <i
+                                                    class="icondt fa fa-eye"
+                                                    data-bs-toggle="modal"
+                                                    data-original-title="test"
+                                                    data-bs-target="#viewDetailsModal"
+                                                    id="endorse"
+                                                    title="endorse"
+                                                ></i>
+                                                <i class="icondt fa fa-trash text-danger" data-bs-toggle="modal" data-original-title="test" data-bs-target="#modal" id="endorse" title="delete"></i>
                                             </td>
                                         </tr>
                                         <tr>
@@ -441,6 +568,15 @@
                                             <td>-</td>
                                             <td class="d-flex justify-content-center icon">
                                                 <i class="icondt fa fa-pencil" title="Edit accreditation" onclick="myFunction()"></i>
+                                                <i
+                                                    class="icondt fa fa-eye"
+                                                    data-bs-toggle="modal"
+                                                    data-original-title="test"
+                                                    data-bs-target="#viewDetailsModal"
+                                                    id="endorse"
+                                                    title="endorse"
+                                                ></i>
+                                                <i class="icondt fa fa-trash text-danger" data-bs-toggle="modal" data-original-title="test" data-bs-target="#modal" id="#modal" title="delete"></i>
                                             </td>
                                         </tr>
                                     </tbody>

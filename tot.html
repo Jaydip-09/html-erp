@@ -194,6 +194,7 @@
                     <li><a href="category.html">Category</a></li>
                     <li><a href="career.html">Career</a></li>
                     <li><a href="postion.html">Position</a></li>
+                    <li><a href="stock.html">Stock</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
@@ -216,9 +217,19 @@
                     <li><a href="tot.html">TOT</a></li>
                     <li><a href="accreditation.html">accreditation</a></li>
                     <li><a href="placement.html">Placement</a></li>
+                    <li><a href="Inventory.html">Inventory</a></li>
                   </ul>
                 </li>
-
+                <li class="dropdown">
+                  <a class="nav-link menu-title" href="javascript:void(0)"><i
+                      data-feather="grid"></i><span>HR</span></a>
+                  <ul class="nav-submenu menu-content">
+                      <li><a href="hr_dashboard.html">Dashboard</a></li>
+                    <li><a href="hr_staff.html">Staff</a></li>
+                     <li><a href="hr_staffSalary.html">Salary Overview</a></li>
+                     <li><a href="hr_leave.html">Staff Leave</a></li>
+                  </ul>
+                </li>
               </ul>
             </div>
             <!-- <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div> -->
@@ -247,7 +258,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 d-flex align-items-end justify-content-end ">
+        <div class="col-12 d-flex align-items-end justify-content-end mb-4">
           <a href="batchList.html" class="text-white">
               <button class="btn btn-pill btn-success mx-2" type="button">Export TOT</button>
           </a>
@@ -286,27 +297,6 @@
                   </div>
                   <div class="col-3">
                     <div class="form-group">
-                      <label for="contactNo">Alter Name</label>
-                      <input type="text" class="form-control" id="contactNo" name="contact_no" min="0"
-                        placeholder="Enter alter name" required />
-                    </div>
-                  </div>
-                  <div class="col-3">
-                    <div class="form-group">
-                      <label for="contactNo">Alter Number</label>
-                      <input type="text" class="form-control" id="contactNo" name="contact_no" min="0"
-                        placeholder="Enter alter number" required />
-                    </div>
-                  </div>
-                  <div class="col-3">
-                    <div class="form-group">
-                      <label for="TR">TR ID</label>
-                      <input type="number" class="form-control" id="TR" name="contact_no" min="0"
-                        placeholder="Enter tr id" required />
-                    </div>
-                  </div>
-                  <div class="col-3">
-                    <div class="form-group">
                       <label for="Job">Course Name</label>
                       <div class="input-group">
                         <select class="form-select digits" id="exampleFormControlSelect9">
@@ -324,16 +314,44 @@
                   </div>
                   <div class="col-3">
                     <div class="form-group">
-                      <label for="QP">QP code</label>
-                      <input type="text" class="form-control" id="QP" name="confirmPassword" placeholder="Enter qp code"
-                        required />
+                      <label for="TR">Trainer ID</label>
+                      <input type="number" class="form-control" id="TR" name="contact_no" min="0"
+                        placeholder="Enter tr id" required />
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-group">
+                      <label for="contactNo">Alter Name</label>
+                      <input type="text" class="form-control" id="contactNo" name="contact_no" min="0"
+                        placeholder="Enter alter name" required />
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-group">
+                      <label for="contactNo">Alter Contact Number</label>
+                      <input type="text" class="form-control" id="contactNo" name="contact_no" min="0"
+                        placeholder="Enter alter number" required />
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-group">
+                      <label for="contactNo">Alter Email ID</label>
+                      <input type="text" class="form-control" id="contactNo" name="contact_no" min="0"
+                        placeholder="Enter alter name" required />
                     </div>
                   </div>
                   <div class="col-3">
                     <div class="form-group">
                       <label for="Certificate">Certificate Number</label>
                       <input type="text" class="form-control" id="Certificate" name="confirmPassword"
-                        placeholder="Enter certificate number" required />
+                      placeholder="Enter certificate number" required />
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-group">
+                      <label for="QP">QP code</label>
+                      <input type="text" class="form-control" id="QP" name="confirmPassword" placeholder="Enter qp code"
+                        required disabled/>
                     </div>
                   </div>
                   <div class="col-3">

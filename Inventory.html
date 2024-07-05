@@ -317,7 +317,7 @@
             <div class="page-header dash-breadcrumb py-3">
               <div class="row">
                 <div class="col-6">
-                  <h3 class="f-w-600">Staff</h3>
+                  <h3 class="f-w-600">Inventory</h3>
                 </div>
                 <div class="col-6">
                   <div class="breadcrumb-sec">
@@ -326,7 +326,7 @@
                         <a href="dashboard.html"><i data-feather="more-horizontal"></i></a>
                       </li>
                       <li class="breadcrumb-item">Other</li>
-                      <li class="breadcrumb-item active">Staff</li>
+                      <li class="breadcrumb-item active">Inventory</li>
                     </ul>
                   </div>
                 </div>
@@ -338,290 +338,256 @@
             <div class="card p-4 rounded mb-0">
                 <form id="staffForm">
                     <div class="wizard-step active" id="personalDetails">
-                      <h6 class="p-2">Personal Details</h6>
-                      <hr />
                       <div class="row">
-                        <div class="col-3">
-                          <div class="form-group">
-                            <label for="name">Name</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="name"
-                              name="name"
-                              placeholder="Enter your name"
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div class="col-3">
-                          <div class="form-group">
-                            <label for="email">Email</label>
-                            <input
-                              type="email"
-                              class="form-control"
-                              id="email"
-                              name="email"
-                              placeholder="Enter your email"
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                              <label for="contactNo">Contact Number</label>
-                              <input
-                                type="number"
-                                class="form-control"
-                                id="contactNo"
-                                name="contact_no"
-                                min="0"
-                                placeholder="Enter your contact number"
-                                required
-                              />
-                            </div>
-                          </div>
                           <div class="col-3">
-                            <label>Qualification</label>
+                            <label>Center</label>
                             <select class="form-select digits" id="exampleFormControlSelect9">
-                                <option disabled selected>Select Qualification</option>
-                                <option>SSC</option>
-                                <option>HSC</option>
-                                <option>Diploma</option>
-                                <option>Bachelor's Degree</option>
-                                <option>Master's Degree</option>
-                                <option>Ph.D</option>
+                                <option disabled selected>Select Center</option>
+                                <option>Center-1</option>
+                                <option>Center-2</option>
+                                <option>Center-3</option>
+                                <option>Center-4</option>
                             </select>
                         </div>
                         <div class="col-3">
-                            <div class="form-group">
-                              <label for="role">Role</label>
-                              <select class="form-control" id="role" name="role" required>
-                                <option value="">Select your role</option>
-                                <option value="Admin">Admin</option>
-                                <option value="Manager">Manager</option>
-                                <option value="Staff">Staff</option>
-                                <option value="Staff">Trainer</option>
-                              </select>
-                            </div>
-                          </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                              <label for="requiredStaff">Position</label>
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="requiredStaff"
-                                name="required_staff"
-                                placeholder="Enter position"
-                                required
-                              />
-                            </div>
-                          </div>
+                            <label>Stock Type</label>
+                            <select class="form-select digits" id="exampleFormControlSelect9">
+                                <option disabled selected>Select type of Stock</option>
+                                <option>PC</option>
+                                <option>Microscope</option>
+                                <option>Mouse</option>
+                                <option>Keyboard</option>
+                                <option>projector</option>
+                            </select>
+                        </div>
                         <div class="col-3">
                           <div class="form-group">
-                            <label for="experience">Experience (in years)</label>
+                            <label for="experience">Quantity</label>
                             <input
                               type="number"
                               class="form-control"
-                              id="experience"
-                              name="experience"
+                              id="quantity"
+                              name="quantity"
                               min="0"
-                              placeholder="Enter your experience"
+                              placeholder="Enter Quantity"
                               required
                             />
                           </div>
                         </div>
                         <div class="col-3">
                           <div class="form-group" title="Indian Rupees">
-                            <label for="salary">Salary (INR)</label>
-                            <input
-                              type="number"
-                              class="form-control"
-                              id="salary"
-                              name="salary"
-                              min="0"
-                              placeholder="Enter salary"
-                              required
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-pill btn-primary" id="nextToOtherDetails">Next</button>
-                      </div>
-                    </div>
-                    <div class="wizard-step" id="otherDetails">
-                      <h6 class="p-2">Other Details</h6>
-                      <hr />
-                      <div class="row">
-                        
-                        <div class="col-3">
-                          <div class="form-group">
-                            <label for="joiningDate">Joining Date</label>
-                            <input
-                              type="date"
-                              class="form-control"
-                              id="joiningDate"
-                              name="joining_date"
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div class="col-3">
-                          <div class="form-group">
-                            <label for="leftDate">Left Date</label>
-                            <input
-                              type="date"
-                              class="form-control"
-                              id="leftDate"
-                              name="left_date"
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="form-group">
-                            <label for="Address">Address</label>
+                            <label for="salary">Remarks</label>
                             <textarea
-                              type="date"
+                              type="text"
                               class="form-control"
-                              id="Address"
-                              placeholder="Enter address"
-                              name="left_date"
+                              id="Remarks"
+                              name="Remarks"
+                              min="0"
                               required
-                            ></textarea>
+                            >Enter Remarks</textarea>
                           </div>
                         </div>
-                       
                       </div>
                       <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-pill btn-secondary mx-2" id="backToPersonalDetails">Back</button>
-                        <button type="submit" class="btn btn-pill btn-primary">Submit</button>
+                        <button type="button" class="btn btn-pill btn-primary">Add</button>
                       </div>
                     </div>
                 </form>
             </div>
           </div>
 
-          <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal"
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add Damaged stock</h5>
+                                <button class="btn-close" type="button" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" class="">
+                                    <div class="row">
+                                        <div class="col-6">
+                                          <label>Center</label>
+                                          <select class="form-select digits" id="exampleFormControlSelect9" disabled>
+                                              <option disabled>Select Center</option>
+                                              <option selected>Center-1</option>
+                                              <option>Center-2</option>
+                                              <option>Center-3</option>
+                                              <option>Center-4</option>
+                                          </select>
+                                      </div>
+                                      <div class="col-6">
+                                          <label>Stock Type</label>
+                                          <select class="form-select digits" id="exampleFormControlSelect9" disabled>
+                                              <option disabled>Select type of Stock</option>
+                                              <option selected>PC</option>
+                                              <option>Microscope</option>
+                                              <option>Mouse</option>
+                                              <option>Keyboard</option>
+                                              <option>projector</option>
+                                          </select>
+                                      </div>
+                                      <div class="col-6">
+                                        <div class="form-group">
+                                          <label for="experience">Damaged Stock</label>
+                                          <input
+                                            type="number"
+                                            class="form-control"
+                                            id="Damaged Stock"
+                                            name="Damaged Stock"
+                                            min="0"
+                                            placeholder="Enter Damaged Stock"
+                                            required
+                                          />
+                                        </div>
+                                      </div>
+                                      <div class="col-6">
+                                        <div class="form-group" title="Indian Rupees">
+                                          <label for="salary">Remarks</label>
+                                          <textarea
+                                            type="text"
+                                            class="form-control"
+                                            id="Remarks"
+                                            name="Remarks"
+                                            min="0"
+                                            required
+                                          >Enter Remarks</textarea>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-pill btn-secondary mx-2" type="button"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-pill btn-success" type="button">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
+                <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="modal">Center Delete</h5>
-                      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="modal">Center Delete</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <p>Are you sure, you want to delete?</p>
-                  
+                    <p>Are you sure, you want to delete?</p>
+                
                     </div>
                     <div class="modal-footer">
-                      <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-end">
                         <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">
-                          Cancel
+                        Cancel
                         </button>
                         <!-- <button class="btn btn-pill btn-primary-gradien mx-2" type="button">Submit</button> -->
                         <button class="btn btn-pill btn-success" type="button">
-                          Yes
+                        Yes
                         </button>
-                      </div>
                     </div>
-                  </div>
+                    </div>
                 </div>
-              </div>
-          <div
-    class="modal fade"
-    id="viewDetailsModal"
-    tabindex="-1"
-    aria-labelledby="viewDetailsModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="viewDetailsModalLabel">Staff Details</h5>
-          <button
-                  class="btn-close"
-                  type="button"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-        </div>
-        <div class="modal-body">
-          <!-- Personal Details Section -->
-          <div class="section-content">
-            <div class="section-title">Personal Details</div>
-            <div class="row p-2">
-              <div class="col-6">
-                <label>Name:</label>
-                <span>Rohit</span>
-              </div>
-              <div class="col-6">
-                <label>Email:</label>
-                <span>rohit@gmail.com</span>
-              </div>
-              <div class="col-6">
-                <label>Contact Number:</label>
-                <span>9429641779</span>
-              </div>
-              <div class="col-6">
-                <label>Qualification:</label>
-                <span>Bachelor's Degree</span>
-              </div>
-              <div class="col-6">
-                <label>Role:</label>
-                <span>Admin</span>
-              </div>
-              <div class="col-6">
-                <label>Position:</label>
-                <span>Centre Manager</span>
-              </div>
+                </div>
             </div>
-          </div>
-          <!-- Other Details Section -->
-          <div class="section-content">
-            <div class="section-title">Other Details</div>
-            <div class="row p-2">
-              <div class="col-6">
-                <label>Experience:</label>
-                <span>1 year</span>
-              </div>
-              <div class="col-6">
-                <label>Salary (INR):</label>
-                <span>25000</span>
-              </div>
-              <div class="col-6">
-                <label>Joining Date:</label>
-                <span>01-11-2023</span>
-              </div>
-              <div class="col-6">
-                <label>Left Date:</label>
-                <span>01-11-2023</span>
-              </div>
-              <div class="col-6">
-                <label>Address:</label>
-                <span>123 Main St, Springfield</span>
-              </div>
+            <div
+        class="modal fade"
+        id="viewDetailsModal"
+        tabindex="-1"
+        aria-labelledby="viewDetailsModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="viewDetailsModalLabel">Staff Details</h5>
+            <button
+                    class="btn-close"
+                    type="button"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                    ></button>
             </div>
-          </div>
+            <div class="modal-body">
+            <!-- Personal Details Section -->
+            <div class="section-content">
+                <div class="section-title">Personal Details</div>
+                <div class="row p-2">
+                <div class="col-6">
+                    <label>Name:</label>
+                    <span>Rohit</span>
+                </div>
+                <div class="col-6">
+                    <label>Email:</label>
+                    <span>rohit@gmail.com</span>
+                </div>
+                <div class="col-6">
+                    <label>Contact Number:</label>
+                    <span>9429641779</span>
+                </div>
+                <div class="col-6">
+                    <label>Qualification:</label>
+                    <span>Bachelor's Degree</span>
+                </div>
+                <div class="col-6">
+                    <label>Role:</label>
+                    <span>Admin</span>
+                </div>
+                <div class="col-6">
+                    <label>Position:</label>
+                    <span>Centre Manager</span>
+                </div>
+                </div>
+            </div>
+            <!-- Other Details Section -->
+            <div class="section-content">
+                <div class="section-title">Other Details</div>
+                <div class="row p-2">
+                <div class="col-6">
+                    <label>Experience:</label>
+                    <span>1 year</span>
+                </div>
+                <div class="col-6">
+                    <label>Salary (INR):</label>
+                    <span>25000</span>
+                </div>
+                <div class="col-6">
+                    <label>Joining Date:</label>
+                    <span>01-11-2023</span>
+                </div>
+                <div class="col-6">
+                    <label>Left Date:</label>
+                    <span>01-11-2023</span>
+                </div>
+                <div class="col-6">
+                    <label>Address:</label>
+                    <span>123 Main St, Springfield</span>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+            <button
+                type="button"
+                class="btn btn-pill btn-secondary"
+                data-bs-dismiss="modal"
+            >
+                Close
+            </button>
+            </div>
         </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-pill btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
         </div>
-      </div>
-    </div>
-  </div>
+            </div>
           <div class="container-fluid">
             <div class="col-6 pt-4 pb-2">
               <h3 class="f-w-600" style="font-size: 24px; font-weight: bold">
-                Staff List
+                Inventory List
               </h3>
             </div>
             <div class="card">
@@ -630,60 +596,51 @@
                   <table class="display" id="basic-1">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Contact Number</th>
-                        <th>Role</th>
-                        <th>Position</th>
-                        <th>Qualification</th>
-                        <th>Joining Date</th>
+                        <th>SrNo.</th>
+                        <th>Center</th>
+                        <th>Stock Type</th>
+                        <th>Total Stock</th>
+                        <th>Damaged Stock</th>
+                        <th>In Use Stock</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>John Doe</td>
-                        <td>1234567890</td>
-                        <td>Trainer</td>
-                        <td>Course Trainer</td>
-                        <td>B.com</td>
-                        <td>10/12/2021</td>
+                        <td>1</td>
+                        <td>Center-1</td>
+                        <td>PC</td>
+                        <td>38</td>
+                        <td>10</td>
+                        <td>28</td>
                         <td class="d-flex justify-content-center icon">
-                          <i
-                            class="icondt fa fa-pencil"
-                            title="edit"
-                          ></i>
-                          <i
-                            class="icondt fa fa-eye"
-                            data-bs-toggle="modal"
-                            data-original-title="test"
-                            data-bs-target="#viewDetailsModal"
-                            id="endorse"
-                            title="endorse"
-                          ></i>
-                          <i class="icondt fa fa-trash text-danger" data-bs-toggle="modal" data-original-title="test" data-bs-target="#modal" id="endorse" title="delete"></i>
+                            <i class="icondt fa fa-eye text-success" title="View Stock" onclick="myFunction()"></i>
+                          <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal"
+                            data-original-title="test" data-bs-target="#exampleModal"
+                            title="Edit"></i>
                         </td>
                       </tr>
                       <tr>
-                        <td>Arthur</td>
-                        <td>087654321</td>
-                        <td>Staff</td>
-                        <td>Maintenance</td>
-                        <td>Diploma</td>
-                        <td>04/02/2023</td>
+                        <td>2</td>
+                        <td>Center-2</td>
+                        <td>Microscope</td>
+                        <td>60</td>
+                        <td>10</td>
+                        <td>50</td>
                         <td class="d-flex justify-content-center icon">
-                          <i
-                            class="icondt fa fa-pencil"
-                            title="edit"
-                          ></i>
-                          <i
-                            class="icondt fa fa-eye"
-                            data-bs-toggle="modal"
-                            data-original-title="test"
-                            data-bs-target="#viewDetailsModal"
-                            id="endorse1"
-                            title="endorse"
-                          ></i>
-                          <i class="icondt fa fa-trash text-danger" data-bs-toggle="modal" data-original-title="test" data-bs-target="#modal" id="endorse" title="delete"></i>
+                            <!-- <i
+                              class="icondt fa fa-eye text-success"
+                              data-bs-toggle="modal"
+                              data-original-title="test"
+                              data-bs-target="#viewDetailsModal"
+                              id="endorse1"
+                              title="endorse"
+                            ></i> -->
+                            <i class="icondt fa fa-eye text-success" title="View Stock" onclick="myFunction()"></i>
+                            <i class="icondt text-primary fa fa-pen" data-bs-toggle="modal"
+                            data-original-title="test" data-bs-target="#exampleModal"
+                            title="Edit"></i>
+                          <!-- <i class="icondt fa fa-trash text-danger" data-bs-toggle="modal" data-original-title="test" data-bs-target="#modal" id="endorse" title="delete"></i> -->
                         </td>
                       </tr>
                     </tbody>
@@ -754,7 +711,7 @@
     <script src="../assets/js/script.js"></script>
     <script>
       function myFunction() {
-        window.location.href = "editInquiry.html";
+        window.location.href = "viewInventory.html";
       }
     </script>
     <script>
