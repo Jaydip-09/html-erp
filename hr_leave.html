@@ -452,7 +452,7 @@
                                         <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#halfModal">HD | Half Day</div>
                                         <div class="col-md-4 grid-item border px-3" onclick="toggleDangerClass(this)">A | Absent</div>
                                         <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#compModal">CO | Comp Off</div>
-                                        <div class="col-md-4 grid-item border px-3">L | Paid Leave</div>
+                                        <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#leaveModal">L | Paid Leave</div>
                                     </div>
                                 </div>
                             </div>
@@ -471,7 +471,7 @@
                                     <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#halfModal">HD | Half Day</div>
                                     <div class="col-md-4 grid-item border px-3" onclick="toggleDangerClass(this)">A | Absent</div>
                                     <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#compModal">CO | Comp Off</div>
-                                    <div class="col-md-4 grid-item border px-3">L | Paid Leave</div>
+                                    <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#leaveModal">L | Paid Leave</div>
                                 </div>
                             </div>
                             </div>
@@ -490,7 +490,7 @@
                                     <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#halfModal">HD | Half Day</div>
                                     <div class="col-md-4 grid-item border deactive bg-danger px-3" onclick="toggleDangerClass(this)">A | Absent</div>
                                     <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#compModal">CO | Comp Off</div>
-                                    <div class="col-md-4 grid-item border px-3">L | Paid Leave</div>
+                                    <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#leaveModal">L | Paid Leave</div>
                                 </div>
                             </div>
                             </div>
@@ -509,9 +509,88 @@
                                     <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#halfModal">HD | Half Day</div>
                                     <div class="col-md-4 grid-item border px-3" onclick="toggleDangerClass(this)">A | Absent</div>
                                     <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#compModal">CO | Comp Off</div>
-                                    <div class="col-md-4 grid-item border px-3">L | Paid Leave</div>
+                                    <div class="col-md-4 grid-item border px-3" data-bs-toggle="modal" data-bs-target="#leaveModal">L | Paid Leave</div>
                                 </div>
                             </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="leaveModal" tabindex="-1" role="dialog" aria-labelledby="attendanceModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="attendanceModalLabel">Half Day Thursday</h5>
+                                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- <form id="attendanceForm">
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <label>Gender</label>
+                                                <div class="">
+                                                    <div class="form-check me-3">
+                                                        <div class="d-flex"></div>
+                                                        <input class="form-check-input"
+                                                            type="radio" name="gender"
+                                                            id="male" value="male" />
+                                                        <label class="form-check-label"
+                                                            for="male">
+                                                            Male
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input"
+                                                            type="radio" name="gender"
+                                                            id="female" value="female" />
+                                                        <label class="form-check-label"
+                                                            for="female">
+                                                            Female
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form> -->
+                                    <form>
+                                        <div class="form-group">
+                                            <div class="form-check d-flex justify-content-between mt-2">
+                                                <div>
+                                                    <input class="form-check-input" type="radio" name="leaveOption" id="weeklyOff" value="weeklyOff">
+                                                    <label class="form-check-label" for="weeklyOff">
+                                                        Weekly Off
+                                                    </label>
+                                                </div>
+                                                <span class="text-muted">0.00 Left</span>
+                                            </div>
+                                            <div class="form-check d-flex justify-content-between mt-2">
+                                                <div>
+                                                    <input class="form-check-input" type="radio" name="leaveOption" id="compOffLeave" value="compOffLeave">
+                                                    <label class="form-check-label" for="compOffLeave">
+                                                        Comp Off Leave
+                                                    </label>
+                                                </div>
+                                                <span class="text-muted">0.00 Left</span>
+                                            </div>
+                                            <div class="form-check d-flex justify-content-between mt-2">
+                                                <div>
+                                                    <input class="form-check-input" type="radio" name="leaveOption" id="other" value="other">
+                                                    <label class="form-check-label" for="other">
+                                                        Other
+                                                    </label>
+                                                </div>
+                                                <span class="text-muted">0.00 Left</span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="d-flex justify-content-end">
+                                        <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">Cancel</button>
+                                        <button class="btn btn-pill btn-success" type="submit" form="attendanceForm">Submit</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
