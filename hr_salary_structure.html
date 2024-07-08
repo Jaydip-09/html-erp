@@ -215,27 +215,36 @@
                     <div class="email-wrap bookmark-wrap">
                         <div class="row">
                             <!-- sidebar-->
-                            <div class="col-xl-3 box-col-4 xl-20">
+                            <div class="col-xl-2 box-col-3 xl-10">
                                 <div class="md-sidebar-aside">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="email-app-sidebar left-bookmark">
                                                 <ul class="nav main-menu" role="tablist">
                                                     <li><a id="pills-created-tab" data-bs-toggle="pill"
-                                                            href="#pills-created" role="tab"
+                                                            href="hr_staffProfile.html" role="tab"
                                                             aria-controls="pills-created" aria-selected="true"><span
                                                                 class="title">Profile</span></a></li>
-                                                    <li><a id="" data-bs-toggle="pill" href="" role="tab"
+                                                    <li><a id="" data-bs-toggle="pill" href="hr_leave.html" role="tab"
                                                             aria-controls="pills-created" aria-selected="false"><span
                                                                 class="title">Attendance</span></a></li>
+                                                    <li><a class="show" id="pills-delayed-tab" data-bs-toggle="pill"
+                                                        href="hr_staffSalary.html" role="tab"
+                                                        aria-controls="pills-delayed" aria-selected="false"><span
+                                                            class="title">Salary Overview</span></a></li>
                                                     <li><a class="show" id="pills-todaytask-tab" data-bs-toggle="pill"
-                                                            href="#pills-todaytask" role="tab"
+                                                            href="hr_salary_structure.html" role="tab"
                                                             aria-controls="pills-todaytask" aria-selected="false"><span
                                                                 class="title">Salary Structure</span></a></li>
                                                     <li><a class="show" id="pills-delayed-tab" data-bs-toggle="pill"
-                                                            href="#pills-delayed" role="tab"
+                                                            href="hr_holiday_template" role="tab"
                                                             aria-controls="pills-delayed" aria-selected="false"><span
                                                                 class="title">Holiday Template</span></a></li>
+                                                    <li><a class="show" id="pills-delayed-tab" data-bs-toggle="pill"
+                                                        href="hr_settings.html" role="tab"
+                                                        aria-controls="pills-delayed" aria-selected="false"><span
+                                                            class="title">Settings</span></a></li>
+                                                    <li>
                                                     <li>
                                                         <hr>
                                                     </li>
@@ -245,46 +254,42 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-9 col-md-12 box-col-8 xl-70">
+                            <div class="col-xl-10 col-md-12 box-col-9 xl-90">
                                 <!-- Personal  -->
 
                                 <div class="email-right-aside bookmark-tabcontent">
                                     <div class="card email-body radius-left">
-                                        <div class="ps-0">
-                                            <div class=" dash-breadcrumb m-1">
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <h5 class="f-w-600">Salary Details</h5>
-                                                    </div>
-                                                    <div class="col-6 d-flex justify-content-end">
-                                                        <div class="btn-group">
-                                                            <button type="button"
-                                                                class="btn btn-pill btn-light dropdown-toggle"
-                                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                                Active
-                                                            </button>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a class="dropdown-item disabled"
-                                                                        href="hr_salary_revise.html">Revise</a></li>
-                                                                <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                                <li><a class="dropdown-item" href="#">History</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <!-- <a href="hr_staff.html" class="text-black"><button
-                                    class="btn btn-pill btn-primary mx-2">Action</button></a> -->
-                                                    </div>
-                                                </div>
-                                                <div class="row text-left">
-                                                    <div class="col-12">
-                                                        <button class="btn">
-                                                            <i class="fas fa-suitcase text-primary"></i><span
-                                                                class="f-w-600"> Salary Template Components</span>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="card-body ps-0">
                                             <div class="container-fluid">
                                                 <div class="ps-0">
+                                                    <div class="row ml-4">
+                                                        <div class="col-6">
+                                                            <h5 class="f-w-600">Salary Details</h5>
+                                                        </div>
+                                                        <div class="col-6 d-flex justify-content-end">
+                                                            <div class="btn-group">
+                                                                <button type="button"
+                                                                    class="btn btn-pill btn-light dropdown-toggle"
+                                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    Actions
+                                                                </button>
+                                                                <ul class="dropdown-menu">
+                                                                    <li><a class="dropdown-item disabled"
+                                                                            href="hr_salary_revise.html">Revise</a></li>
+                                                                    <li><a class="dropdown-item" href="hr_salary_edit.html">Edit</a></li>
+                                                                    <li><a class="dropdown-item" href="#">History</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row text-left">
+                                                        <div class="col-12">
+                                                            <button class="btn">
+                                                                <i class="fas fa-suitcase text-primary"></i><span
+                                                                    class="f-w-600"> Salary Template Components</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                                     <div class="row">
                                                         <div class="col-sm-12">
                                                             <div class="card">
@@ -315,19 +320,19 @@
                                                                             <div class="customTop">
                                                                                 <div class="row border-bottom mt-2">
                                                                                     <div class="col-3">
-                                                                                        <h6>Components</h6>
+                                                                                        <h6 class="text-secondary">Components</h6>
                                                                                     </div>
-                                                                                    <div class="col-3">
-                                                                                        <h6>Calculation</h6>
+                                                                                    <div class="col-3 text-center">
+                                                                                        <h6 class="text-secondary">Calculation</h6>
                                                                                     </div>
-                                                                                    <div class="col-3">
-                                                                                        <h6>Monthly Amount</h6>
+                                                                                    <div class="col-3 text-center">
+                                                                                        <h6 class="text-secondary">Monthly Amount</h6>
                                                                                     </div>
-                                                                                    <div class="col-3">
-                                                                                        <h6>Yearly Amount</h6>
+                                                                                    <div class="col-3 text-center">
+                                                                                        <h6 class="text-secondary">Yearly Amount</h6>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="row mt-2">
+                                                                                <div class="row mt-4">
                                                                                     <div class="col-3">
                                                                                         <h6>Fixed</h6>
                                                                                     </div>
@@ -338,7 +343,7 @@
                                                                                     <div class="col-3">
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="row">
+                                                                                <div class="row mt-4">
                                                                                     <div class="col-3">
                                                                                         <h6>Earnings</h6>
                                                                                     </div>
@@ -349,36 +354,49 @@
                                                                                     <div class="col-3">
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="row">
+                                                                                <div class="row mt-4">
                                                                                     <div class="col-3">
                                                                                         <p>Special Allowance</p>
                                                                                     </div>
-                                                                                    <div class="col-3">
+                                                                                    <div class="col-3 text-center">
                                                                                         <p>Fixed</p>
                                                                                     </div>
-                                                                                    <div class="col-3">
+                                                                                    <div class="col-3 text-center">
                                                                                         <p>₹ 0</p>
                                                                                     </div>
-                                                                                    <div class="col-3">
+                                                                                    <div class="col-3 text-center">
                                                                                         <p>₹ 0</p>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="row">
+                                                                                <div class="row mt-4 mb-4">
                                                                                     <div class="col-3">
                                                                                         <p>System Basic</p>
                                                                                     </div>
-                                                                                    <div class="col-3">
+                                                                                    <div class="col-3 text-center">
                                                                                         <p>Fixed</p>
                                                                                     </div>
-                                                                                    <div class="col-3">
-                                                                                        <p>₹ 0</p>
+                                                                                    <div class="col-3 text-center">
+                                                                                        <p>₹ 1</p>
                                                                                     </div>
-                                                                                    <div class="col-3">
-                                                                                        <p>₹ 0</p>
+                                                                                    <div class="col-3 text-center">
+                                                                                        <p>₹ 12</p>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class="border-bottom mt-2"></div>
+                                                                                <div class="border-bottom mt-2"></div>
+                                                                                <div class="row mt-4 mb-4">
+                                                                                    <div class="col-3">
+                                                                                        <p></p>
+                                                                                    </div>
+                                                                                    <div class="col-3 text-center">
+                                                                                        <p></p>
+                                                                                    </div>
+                                                                                    <div class="col-3 text-center">
+                                                                                        <h6>₹ 1</h6>
+                                                                                    </div>
+                                                                                    <div class="col-3 text-center">
+                                                                                        <h6>₹ 12</h6>
+                                                                                    </div>
+                                                                                </div>                                                                            </div>
                                                                         </div>
                                                                     </div>
 
