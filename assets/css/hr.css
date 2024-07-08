@@ -172,3 +172,10 @@ height: 100vh;
 .class{
     background-color: red;
 }
+.underline-text {
+    text-decoration: underline;
+}
+.gradient-bg {
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(161,161,214,1) 0%, rgba(138,57,57,1) 69%);
+}
