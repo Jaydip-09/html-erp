@@ -51,59 +51,75 @@
         .attendance-container {
             padding: 20px;
         }
+
+        .row-flex {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .things-to-do {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        .things-to-do .circle {
+            border: 2px solid #007bff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
         .attendance-card {
             border-radius: 10px;
             flex: 2;
             display: flex;
             flex-direction: column;
         }
+
         .attendance-card-header,
         .attendance-card-body,
         .card-footer {
             flex: none;
         }
+
         .attendance-card-body {
             flex: 1;
             text-align: center;
         }
-        .attendance-table th, .attendance-table td {
-      text-align: center;
-      vertical-align: middle;
-    }
-    .calendar {
-      display: none;
-    }
-    .expanded {
-      display: table-row;
-    }
-    .arrow {
-      cursor: pointer;
-    }
-    .row-flex {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .left_part, .right-part {
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .circle {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 10px auto;
-    }
-    .things-to-do {
-      text-align: center;
-    }
-    .attendance-card-header {
-      background-color: #f7f7f7;
-    }
+
+        .attendance-table th,
+        .attendance-table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .calendar {
+            display: none;
+        }
+
+        .expanded .calendar {
+            display: table-row-group;
+        }
+
+        .arrow {
+            cursor: pointer;
+        }
+
+        .custom-button {
+            background: none;
+            border: none;
+            color: #007bff;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -181,7 +197,7 @@
                 <div class="d-lg-none col mobile-toggle pull-right"><i data-feather="more-horizontal"></i></div>
             </div>
         </div>
-        <!-- Page Header Ends                              -->
+        <!-- Page Header Ends-->
         <!-- Page Body Start-->
         <div class="page-body-wrapper horizontal-menu">
             <!-- Page Sidebar Start-->
@@ -252,15 +268,15 @@
                                 </li>
                                 <li class="dropdown">
                                     <a class="nav-link menu-title" href="javascript:void(0)"><i
-                                        data-feather="grid"></i><span>HR</span></a>
+                                            data-feather="grid"></i><span>HR</span></a>
                                     <ul class="nav-submenu menu-content">
                                         <li><a href="hr_dashboard.html">Dashboard</a></li>
-                                      <li><a href="hr_staff.html">Staff</a></li>
-                                       <li><a href="hr_staffSalary.html">Salary Overview</a></li>
-                                       <li><a href="hr_leave.html">Staff Leave</a></li>
-                                       <li><a href="holidayList.html">Setting</a></li>
+                                        <li><a href="hr_staff.html">Staff</a></li>
+                                        <li><a href="hr_staffSalary.html">Salary Overview</a></li>
+                                        <li><a href="hr_leave.html">Staff Leave</a></li>
+                                        <li><a href="holidayList.html">Setting</a></li>
                                     </ul>
-                                  </li>
+                                </li>
                             </ul>
                         </div>
                         <!-- <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div> -->
@@ -269,271 +285,66 @@
             </header>
             <!-- Page Sidebar Ends-->
             <div class="page-body">
-              <div class="attendance-summary container">
-                <div class="card">
-                            <div class="card-header attendance-card-header">
-                              <div class="d-flex justify-content-between align-items-center">
-                                <button class="btn btn-link"><</button>
-                                <h5>29 Jun 2024 | Sat</h5>
-                                <button class="btn btn-link">></button>
-                              </div>
-                              <a href="hr_leave.html" class="btn btn-link">Detailed Attendance View</a>
+                <div class="container-fluid">
+                    <div class="page-header dash-breadcrumb py-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <h3 class="f-w-600">Holiday Template</h3>
                             </div>
-                            <div class="attendance-card-body">
-                              <div class="row mb-3">
-                                <div class="col">
-                                  <h6>Present</h6>
-                                  <h4 class="f-w-600">13</h4>
+                            <div class="col-6">
+                                <div class="breadcrumb-sec">
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="dashboard.html"><i
+                                                    data-feather="home"></i></a>
+                                        </li>
+                                        <li class="breadcrumb-item">HR</li>
+                                        <li class="breadcrumb-item active">Setting</li>
+                                    </ul>
                                 </div>
-                                <div class="col">
-                                  <h6>Absent</h6>
-                                  <h4 class="f-w-600">0</h4>
-                                </div>
-                                <div class="col">
-                                  <h6>Not Marked</h6>
-                                  <h4 class="f-w-600">0</h4>
-                                </div>
-                                <div class="col">
-                                  <h6>Half Day</h6>
-                                  <h4 class="f-w-600">0</h4>
-                                </div>
-                                <div class="col">
-                                  <h6>On Leave</h6>
-                                  <h4 class="f-w-600">0</h4>
-                                </div>
-                                <div class="col">
-                                  <h6>Comp Off</h6>
-                                  <h4 class="f-w-600">2</h4>
-                                </div>
-                                <div class="col">
-                                  <h6>Deactivated</h6>
-                                  <h4 class="f-w-600">0</h4>
-                                </div>
-                              </div>
-                              </div>
-                              <!-- <div class="row mt-3 text-left">
-                                <div class="col-3">
-                                  <h6>Comp Off</h6>
-                                  <h4 class="f-w-600">2</h4>
-                                </div>
-                                <div class="col-3">
-                                  <h6>Deactivated</h6>
-                                  <h4 class="f-w-600">0</h4>
-                                </div>
-                              </div>
-                            </div> -->
-                            <!-- <div class="p-4">
-                              <button class="btn btn-outline-light btn-sm">Upcoming leaves in 7 days: 0<span class="btn btn-link">></span> </button>
-                              <button class="btn btn-outline-light btn-sm">Daily Work Entries (0)<span class="btn btn-link">></span>                            </button>
-                            </div> -->
-                          </div>
-                        
-                    <div class="mt-4">
-                        <h3>Attendance Muster Roll Reports</h3>
-                        <!-- <div class="card">
-                          <div class="p-4">
-                        <div class="row mb-4">
-                          <div class="col-3">
-                            <label for="contact">Start Date</label>
-                              <input
-                                type="date"
-                                class="form-control"
-                                id="contact"
-                                name="contact"
-                                placeholder="Enter Start Date"
-                              />
-                          </div>
-                          <div class="col-3">
-                            <label for="contact">End Date</label>
-                              <input
-                                type="date"
-                                class="form-control"
-                                id="end_date"
-                                name="contact"
-                                placeholder="Enter End Date"
-                              />
-                          </div>
-                          <div class="col-3">
-                            <label>Type Of Report</label>
-                              <select class="form-select digits" id="exampleFormControlSelect9">
-                                  <option disabled selected>Select Report Type</option>
-                                  <option>Type-1</option>
-                                  <option>Type-2</option>
-                                  <option>Type-3</option>
-                                  <option>Type-4</option>
-                              </select>
-                          </div>
-                          
-                          <div class="col-3 mt-2 text-center">
-                            <button class="btn btn-primary mt-4">Submit</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
-                        <div class="d-flex justify-content-between mb-2">
-                          <button class="btn btn-primary">Expand All</button>
-                          <div>
-                            <button class="btn btn-secondary" data-toggle="dropdown">Download</button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="#">Option 1</a>
-                              <a class="dropdown-item" href="#">Option 2</a>
                             </div>
-                            <!-- <label class="col-form-label">Type Of Report</label> -->
-                        <select class="d-inline btn  btn-square" data-toggle="dropdown" name="select">
-                          <option value="opt1">Select Month</option>
-                          <option value="opt2">Jul 2024</option>
-                          <option value="opt3">July 2024</option>
-                        </select>
-                            <!-- <select class="btn btn-light d-inline w-auto"  data-toggle="dropdown">
-                              <option>Jul 2024</option>
-                              <option>Jun 2024</option>
-                            </select> -->
-                          </div>
                         </div>
-                        <div class="card">
-                          <div class="row ml-4">
-                            <h5 class="pl-4">Monthly Regular</h5>
-                          </div>
-                          <div class="card-body">
-                            <table class="table table-bordered attendance-table">
-                              <thead>
-                                <tr>
-                                  <th></th>
-                                  <th>Staff Name</th>
-                                  <th>Present</th>
-                                  <th>Absent</th>
-                                  <th>Half Day</th>
-                                  <th>Paid Leave</th>
-                                  <th>Unmarked</th>
-                                  <th>Comp Off</th>
-                                  <th>Total Attendance</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr class="arrow" data-target="#calendar1">
-                                  <td><i class="fas fa-angle-down"></i></td>
-                                  <td>Pratik...</td>
-                                  <td>1</td>
-                                  <td>-</td>
-                                  <td>-</td>
-                                  <td>2</td>
-                                  <td>-</td>
-                                  <td>-</td>
-                                  <td>1P</td>
-                                </tr>
-                                <tr class="arrow" data-target="#calendar1">
-                                    <td><i class="fas fa-angle-down"></i></td>
-                                    <td>Amit...</td>
-                                    <td>6</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>2</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>6P</td>
-                                  </tr>
-                                  <tr class="arrow" data-target="#calendar1">
-                                    <td><i class="fas fa-angle-down"></i></td>
-                                    <td>Vidhi...</td>
-                                    <td>10</td>
-                                    <td>2</td>
-                                    <td>-</td>
-                                    <td>2</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>8P</td>
-                                  </tr>
-                                  <tr class="arrow" data-target="#calendar1">
-                                    <td><i class="fas fa-angle-down"></i></td>
-                                    <td>Riya...</td>
-                                    <td>9</td>
-                                    <td>1</td>
-                                    <td>-</td>
-                                    <td>2</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>8P</td>
-                                  </tr>
-                                <tr id="calendar1" class="calendar">
-                                  <td colspan="10">
-                                    <table class="table mb-0">
-                                      <thead>
-                                        <tr>
-                                          <th>DAYS</th>
-                                          <th>M</th>
-                                          <th>T</th>
-                                          <th>W</th>
-                                          <th>T</th>
-                                          <th>F</th>
-                                          <th>S</th>
-                                          <th>S</th>
-                                          <th>M</th>
-                                          <th>T</th>
-                                          <th>W</th>
-                                          <th>T</th>
-                                          <th>F</th>
-                                          <th>S</th>
-                                          <th>S</th>
-                                          <th>M</th>
-                                          <th>T</th>
-                                          <th>W</th>
-                                          <th>T</th>
-                                          <th>F</th>
-                                          <th>S</th>
-                                          <th>S</th>
-                                          <th>M</th>
-                                          <th>T</th>
-                                          <th>W</th>
-                                          <th>T</th>
-                                          <th>F</th>
-                                          <th>S</th>
-                                          <th>S</th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>
-                                        <tr>
-                                          <td>WH</td>
-                                          <td>11:23</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>P</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>A</td>
-                                          <td>-</td>
-                                          <td>A</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                          <td>-</td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                                <!-- Repeat for other staff rows as needed -->
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
+                    </div>
                 </div>
-        </div>
+                <!-- Container-fluid starts-->
+                <div class="container-fluid default-dash">
+                    <div class="row">
+                        <div class="col-lg-12 row d-flex justify-content-end align-items-end">
+                            <div class="col-lg-3 d-flex justify-content-end align-items-end">
+                                <a href="holiday_template.html">
+
+                                    <button class="btn btn-pill btn-primary">Create Template</button>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-2 fs-6 font-weight-bold">New Year</div>
+                                <div class="col-2 fs-6"></div>
+                                <div class="col-2 fs-6">4 Holidays</div>
+                                <div class="col-2 fs-6">Applied 17 Staff(s)</div>
+                                <div class="col-2 fs-6">
+                                    <a href="manage_staff_holiday.html">
+                                        <button class="custom-button">Manage Staff List</button>
+                                    </a>
+                                </div>
+                                <div class="col-2 fs-6">
+                                    <a href="holiday_template.html">
+                                        <button class="custom-button">Edit Template</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
             <!-- Container-fluid Ends-->
             <!-- footer start-->
             <footer class="footer">
@@ -550,10 +361,11 @@
                     </div>
                 </div>
             </footer>
-            <!-- tap on top starts-->
-            <div class="tap-top"><i class="icon-control-eject"></i></div>
-            <!-- tap on tap ends-->
         </div>
+        <!-- tap on top starts-->
+        <div class="tap-top"><i class="icon-control-eject"></i></div>
+        <!-- tap on tap ends-->
+    </div>
     </div>
     <!-- latest jquery-->
     <script src="../assets/js/jquery-3.5.1.min.js"></script>
@@ -595,7 +407,7 @@
             window.location.href = "editBill.html"
         }
         function nextFunction() {
-            
+
         }
         function backFunction() {
 
@@ -686,35 +498,28 @@
             }
         }
         function showInfo(sectionId, step) {
-        // Hide all info sections
-        document.querySelectorAll('.info-section').forEach(section => {
-            section.classList.remove('active');
-        });
-        // Show the selected info section
-        document.getElementById(sectionId).classList.add('active');
+            // Hide all info sections
+            document.querySelectorAll('.info-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Show the selected info section
+            document.getElementById(sectionId).classList.add('active');
 
-        // Update the step classes
-        document.querySelectorAll('.u-pearl').forEach(pearl => {
-            const pearlStep = parseInt(pearl.getAttribute('data-step'));
-            if (pearlStep < step) {
-                pearl.classList.add('done');
-                pearl.classList.remove('current');
-            } else if (pearlStep === step) {
-                pearl.classList.add('current');
-                pearl.classList.remove('done');
-            } else {
-                pearl.classList.remove('done', 'current');
-            }
-        });
-    }
+            // Update the step classes
+            document.querySelectorAll('.u-pearl').forEach(pearl => {
+                const pearlStep = parseInt(pearl.getAttribute('data-step'));
+                if (pearlStep < step) {
+                    pearl.classList.add('done');
+                    pearl.classList.remove('current');
+                } else if (pearlStep === step) {
+                    pearl.classList.add('current');
+                    pearl.classList.remove('done');
+                } else {
+                    pearl.classList.remove('done', 'current');
+                }
+            });
+        }
 
-    $(document).ready(function() {
-    $('.arrow').click(function() {
-        var target = $(this).data('target');
-        $(target).toggleClass('expanded');
-        $(this).find('.fas').toggleClass('fa-angle-down fa-angle-up');
-    });
-});
     </script>
     <!-- login js-->
     <!-- Plugin used-->
