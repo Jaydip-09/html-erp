@@ -120,6 +120,17 @@
             font: inherit;
             cursor: pointer;
         }
+
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px 20px;
+            text-align: right;
+        }
     </style>
 </head>
 
@@ -197,7 +208,7 @@
                 <div class="d-lg-none col mobile-toggle pull-right"><i data-feather="more-horizontal"></i></div>
             </div>
         </div>
-        <!-- Page Header Ends-->
+        <!-- Page Header Ends                              -->
         <!-- Page Body Start-->
         <div class="page-body-wrapper horizontal-menu">
             <!-- Page Sidebar Start-->
@@ -268,7 +279,7 @@
                                 </li>
                                 <li class="dropdown">
                                     <a class="nav-link menu-title" href="javascript:void(0)"><i
-                                        data-feather="grid"></i><span>HR</span></a>
+                                            data-feather="grid"></i><span>HR</span></a>
                                     <ul class="nav-submenu menu-content">
                                         <li><a href="hr_dashboard.html">Dashboard</a></li>
                                         <li><a href="hr_staff.html">Staff</a></li>
@@ -285,74 +296,208 @@
             </header>
             <!-- Page Sidebar Ends-->
             <div class="page-body">
+
                 <div class="container-fluid">
-                    <div class="page-header dash-breadcrumb py-3">
-                        
+                    <div class="email-wrap bookmark-wrap">
                         <div class="row">
-                            <div class="col-6">
-                                <div>
-                                    <h4 class="f-w-600">Late Entry Rules</h4>
+                            <div class="container-fluid">
+                                <div class="page-header dash-breadcrumb py-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h3 class="f-w-600">Create Template</h3>
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <a href="hr_leave_template.html" class="text-black"><button
+                                                    class="btn btn-pill btn-primary mx-2">Back</button></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-6  d-flex justify-content-end align-items-right">
-                                <a href="hr_settings.html">
-                                    <button class="btn btn-pill btn-primary">Back</button>
-                                </a>
+                            <div>
+                                <div class="template-settings">
+                                    <p class="fs-6 text-secondary">Leave Categories</p>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="">
+                                                <div class="row border-bottom mt-2">
+                                                    <div class="col-6">
+                                                        <h6 class="f-w-600">Template Name</h6>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="form-group">
+                                                            <input type="text"  value="3" class="form-control" id="templateName" name="templateName" value="Leave Policy" placeholder="Enter Template Name" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row border-bottom mt-4 pb-4">
+                                                    <div class="col-6">
+                                                        <h6 class="f-w-600">Leave Policy Cycle</h6>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div>Monthly</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-4 pb-1">
+                                                    <div class="col-6">
+                                                        <h6 class="f-w-600">Sandwich Leaves</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="btn-group" role="group" aria-label="Sandwich Leaves">
+                                                            <button type="button" class="btn btn-outline-primary">Count</button>
+                                                            <button type="button" class="btn btn-outline-primary">Ignore</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div class="leave-categories">
+                                    <p class="fs-6 text-secondary">Leave Categories</p>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="">
+                                                <div class="row border-bottom mt-2">
+                                                    <div class="col-3">
+                                                        <h6>Leave Category name</h6>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <h6>Leave count</h6>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <h6>Unused Leave Rule</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <h6>Encashment/Carry Forward Limit</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-4">
+                                                    <div class="col-3">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="contact"
+                                                                name="contact" value="Sick Leave"
+                                                                placeholder="Enter Emergency Contact" disabled />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="input-group mb-3">
+                                                            <input class="form-control"  value="3"  type="text" aria-label="Amount (to the nearest dollar)"><span class="input-group-text">days per year</span>
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="form-group">
+                                                            <select class="form-select" id="role" name="role">
+                                                                <option value="Regular">Lapse</option>
+                                                                <option value="Contract">Carry Forward</option>
+                                                                <option value="Contract">Encash</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="input-group mb-3">
+                                                            <input class="form-control" value="3" type="text" aria-label="Amount (to the nearest dollar)"><span class="input-group-text">days</span>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-3">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="contact"
+                                                                name="contact" value="Casual Leave"
+                                                                placeholder="Enter Emergency Contact" disabled />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="input-group mb-3">
+                                                            <input class="form-control" value="3" type="text" aria-label="Amount (to the nearest dollar)"><span class="input-group-text">days per year</span>
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="form-group">
+                                                            <select class="form-select" id="role" name="role">
+                                                                <option value="Regular">Lapse</option>
+                                                                <option value="Contract">Carry Forward</option>
+                                                                <option value="Contract">Encash</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="input-group mb-3">
+                                                            <input class="form-control"  value="3" type="text" aria-label="Amount (to the nearest dollar)"><span class="input-group-text">days</span>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-3">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="contact"
+                                                                name="contact" value="Annual Leave"
+                                                                placeholder="Enter Emergency Contact" disabled />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="input-group mb-3">
+                                                            <input class="form-control"  value="3" type="text" aria-label="Amount"><span class="input-group-text">days per year</span>
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="form-group">
+                                                            <select class="form-select" id="role" name="role">
+                                                                <option value="Regular">Lapse</option>
+                                                                <option value="Contract">Carry Forward</option>
+                                                                <option value="Contract">Encash</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="input-group mb-3">
+                                                            <input class="form-control" value="3" type="text" aria-label="Amount (to the nearest dollar)"><span class="input-group-text">days</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="d-flex justify-content-start pr-4">
+                                                <button type="button" class="btn btn-pill btn-primary">Add Leave
+                                                    Category</button>
+                                            </div>
+                                            <div class="border-bottom mt-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="leave-approval">
+                                    <p class="fs-6 text-secondary">Leave Approval</p>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 fs-6 font-weight-bold"><i data-feather="alert-circle"></i></div>
+                                                <div class="col-8 fs-6">Multilevel Approval Settings is set to Level 1 by default</div>
+                                                <div class="col-3 fs-6">
+                                                    <a href="#" class="text-dark">
+                                                        <button class="btn btn-pill btn-primary">Set Multiple Approval</button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12  d-flex justify-content-end align-items-right">
-                            <a href="hr_add_late_entry.html">
-                                <button class="btn btn-pill btn-primary">Add</button>
-                            </a>
                         </div>
                     </div>
                 </div>
-
-                <div class="container-fluid">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row pb-2 border-bottom">
-                                showing 1 results
-                            </div>
-                            <div class="row mt-4 pb-2 border-bottom">
-                                <div class="col-6">
-                                    <div>
-                                        <h6 class="f-w-600">Rule Name</h6>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <h6>Staff Assigned</h6>
-                                </div>
-                                <div class="col-3">
-                                    <h6>Grace Period</h6>
-                                </div>
-                            </div>
-                            <div class="row mt-4 pb-2 d-flex border-bottom">
-                                <div class="col-6">
-                                    <div>
-                                        <div class="">15MIN PER MINUTES SALARY AND 60MIN. HALF DAY SALARY DEDUCT.</div>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div>9 <span class="text-primary">edit staff</span></div>
-                                </div>
-                                <div class="col-2">
-                                    <div>15 min</div>
-                                </div>
-                                <div class="col-1">
-                                    <a href="hr_edit_late_entry.html">
-                                        <i data-feather="more-vertical"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+            <!-- Container-fluid Ends-->
 
+            <!-- <div class="sticky-footer">
+                <div class="row">
+                    <div class="col-2 fs-6">20 Holidays Added</div>
+                    <div class="col-10 d-flex justify-content-end">
+                        <button class="btn btn-primary">Save & Apply</button>
+                    </div>
+                </div>
+            </div> -->
             <!-- Container-fluid Ends-->
             <!-- footer start-->
             <footer class="footer">
@@ -410,9 +555,7 @@
     <!-- Theme js-->
     <script src="../assets/js/theme-customizer/customizer.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script>
-        
-    </script>
+
     <!-- login js-->
     <!-- Plugin used-->
 </body>
