@@ -299,12 +299,12 @@
                                         data-feather="grid"></i><span>HR</span></a>
                                     <ul class="nav-submenu menu-content">
                                         <li><a href="hr_dashboard.html">Dashboard</a></li>
-                                      <li><a href="hr_staff.html">Staff</a></li>
-                                       <li><a href="hr_staffSalary.html">Salary Overview</a></li>
-                                       <li><a href="hr_leave.html">Staff Leave</a></li>
-                                       <li><a href="holidayList.html">Setting</a></li>
+                                        <li><a href="hr_staff.html">Staff</a></li>
+                                        <li><a href="hr_leave.html">Staff Attendance</a></li>
+                                        <li><a href="hr_holiday_template.html">Holiday Template</a></li>
+                                        <li><a href="hr_settings.html">Settings</a></li>
                                     </ul>
-                                  </li>
+                                </li>
                             </ul>
                         </div>
                         <!-- <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div> -->
@@ -367,21 +367,12 @@
                                                         <li><a id="pills-created-tab" href="hr_staffProfile.html" role="tab"
                                                                 aria-controls="pills-created" aria-selected="true"><span
                                                                     class="title">Profile</span></a></li>
-                                                        <li><a id="" href="hr_leave.html" role="tab"
-                                                                aria-controls="pills-created" aria-selected="false"><span
-                                                                    class="title">Attendance</span></a></li>
                                                         <li><a class="show" id="pills-delayed-tab" href="hr_staffSalary.html" role="tab"
                                                                 aria-controls="pills-delayed" aria-selected="false"><span
                                                                     class="title">Salary Overview</span></a></li>
                                                         <li><a class="show" id="pills-todaytask-tab" href="hr_salary_structure.html" role="tab"
                                                                 aria-controls="pills-todaytask" aria-selected="false"><span
                                                                     class="title">Salary Structure</span></a></li>
-                                                        <li><a class="show" id="pills-delayed-tab" href="hr_holiday_template.html" role="tab"
-                                                                aria-controls="pills-delayed" aria-selected="false"><span
-                                                                    class="title">Holiday Template</span></a></li>
-                                                        <li><a class="show" id="pills-delayed-tab" href="hr_settings.html" role="tab"
-                                                                aria-controls="pills-delayed" aria-selected="false"><span
-                                                                    class="title">Settings</span></a></li>
                                                         <li>
                                                         <li>
                                                             <hr>
@@ -392,7 +383,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-10 col-md-12 box-col-9 xl-90 mt-4">
+                                <div class="col-xl-10 col-md-12 box-col-9 xl-90">
                         <div class="email-right-aside bookmark-tabcontent">
                         <div class="">
                             <div class="ps-0">
@@ -400,10 +391,10 @@
 
                                 <div class="">
                                     <!-- Month Card Template -->
-                                    <div class="staff-card shadow month-card p-2">
+                                    <div class="card shadow month-card p-2">
                                         <div class="month-card-header d-flex justify-content-between align-items-center"
                                             onclick="toggleDetails('july-2024-details')">
-                                            <div class="d-flex align-items-center gap-4 ml-4 custom-new">
+                                            <div class="d-flex align-items-center gap-4 ml-4 custom-new p-1">
                                                 <i class="fas fa-calendar-alt mr-2"></i> <!-- Icon for the card -->
                                                 <div class="ml-4">
                                                     <h5>July 2024</h5>
@@ -421,7 +412,7 @@
                                         <div id="july-2024-details" class="details">
                                             <div class="card-body">
                                                 <div class="customTop">
-                                                    <div class="row border-bottom mt-2">
+                                                    <div class="row border-bottom py-2">
                                                         <div class="col-3">
                                                             <h6>Earnings</h6>
                                                         </div>
@@ -438,7 +429,7 @@
                                                             <h6>Actual</h6>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row py-2">
                                                         <div class="col-3">
                                                             <p>System Basic</p>
                                                         </div>
@@ -455,7 +446,7 @@
                                                             <p></p>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row py-2">
                                                         <div class="col-3">
                                                             <p>Gross Earning </p>
                                                         </div>
@@ -474,28 +465,29 @@
                                                     </div>
                                                 </div>
                                                 <div class="border-bottom"></div>
+                                                <!-- Add more rows as needed for each section -->
                                                 <div class="customNet">
-                                                    <div class="row mt-1">
-                                                        <div class="col-5">
+                                                    <div class="row py-2 mt-4">
+                                                        <div class="col-6">
                                                             <h6>Net Payable Amount (Gross Earnings - Total Deductions)
                                                             </h6>
                                                         </div>
                                                         <div class="col-3 text-right">
                                                             <p>28 Payable Days</p>
                                                         </div>
-                                                        <div class="col-3 text-end mr-4">
+                                                        <div class="col-2 text-end mr-4">
                                                             <p>₹ 0</p>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row py-2">
                                                         <div class="col-5">
-                                                            <h6>Adujustments</h6>
+                                                            <h6>Adjustments</h6>
                                                         </div>
                                                         <div class="col-6 text-right">
                                                             <p>₹ 0</p>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row py-2">
                                                         <div class="col-5">
                                                             <h6>Payments</h6>
                                                         </div>
@@ -503,12 +495,12 @@
                                                             <p>₹ 0</p>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-7">
+                                                    <div class="row py-2">
+                                                        <div class="col-5">
                                                             <h6>Due Amount : ₹ 0</h6>
                                                         </div>
-                                                        <div class="col-4 text-right">
-                                                            <!-- <p class="text-primary">View variable</p> -->
+                                                        <div class="col-7 text-right">
+                                                            <p class="text-primary"></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -519,10 +511,10 @@
                                 </div>
                                 <div class="">
                                     <!-- Month Card Template -->
-                                    <div class="staff-card shadow month-card p-2">
+                                    <div class="card shadow month-card p-2">
                                         <div class="month-card-header d-flex justify-content-between align-items-center"
                                             onclick="toggleDetails('june-2024-details')">
-                                            <div class="d-flex align-items-center gap-4 ml-4 custom-new">
+                                            <div class="d-flex align-items-center gap-4 ml-4 custom-new p-1">
                                                 <i class="fas fa-calendar-alt mr-2"></i> <!-- Icon for the card -->
                                                 <div class="ml-4">
                                                     <h5>June 2024</h5>
@@ -596,20 +588,20 @@
                                                 <!-- Add more rows as needed for each section -->
                                                 <div class="customNet">
                                                     <div class="row py-2 mt-4">
-                                                        <div class="col-5">
+                                                        <div class="col-6">
                                                             <h6>Net Payable Amount (Gross Earnings - Total Deductions)
                                                             </h6>
                                                         </div>
                                                         <div class="col-3 text-right">
                                                             <p>28 Payable Days</p>
                                                         </div>
-                                                        <div class="col-3 text-end mr-4">
+                                                        <div class="col-2 text-end mr-4">
                                                             <p>₹ 0</p>
                                                         </div>
                                                     </div>
                                                     <div class="row py-2">
                                                         <div class="col-5">
-                                                            <h6>Adujustments</h6>
+                                                            <h6>Adjustments</h6>
                                                         </div>
                                                         <div class="col-6 text-right">
                                                             <p>₹ 0</p>
@@ -628,7 +620,7 @@
                                                             <h6>Due Amount : ₹ 0</h6>
                                                         </div>
                                                         <div class="col-7 text-right">
-                                                            <p class="text-primary">View variable</p>
+                                                            <p class="text-primary"></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -640,10 +632,10 @@
                                 </div>
                                 <div class="">
                                     <!-- Month Card Template -->
-                                    <div class="staff-card shadow month-card p-2">
+                                    <div class="card shadow month-card p-2">
                                         <div class="month-card-header d-flex justify-content-between align-items-center"
                                             onclick="toggleDetails('may-2024-details')">
-                                            <div class="d-flex align-items-center gap-4 ml-4 custom-new">
+                                            <div class="d-flex align-items-center gap-4 ml-4 custom-new p-1">
                                                 <i class="fas fa-calendar-alt mr-2"></i> <!-- Icon for the card -->
                                                 <div class="ml-4">
                                                     <h5>May 2024</h5>
@@ -717,20 +709,20 @@
                                                 <!-- Add more rows as needed for each section -->
                                                 <div class="customNet">
                                                     <div class="row py-2 mt-4">
-                                                        <div class="col-5">
+                                                        <div class="col-6">
                                                             <h6>Net Payable Amount (Gross Earnings - Total Deductions)
                                                             </h6>
                                                         </div>
                                                         <div class="col-3 text-right">
                                                             <p>28 Payable Days</p>
                                                         </div>
-                                                        <div class="col-3 text-end mr-4">
+                                                        <div class="col-2 text-end mr-4">
                                                             <p>₹ 0</p>
                                                         </div>
                                                     </div>
                                                     <div class="row py-2">
                                                         <div class="col-5">
-                                                            <h6>Adujustments</h6>
+                                                            <h6>Adjustments</h6>
                                                         </div>
                                                         <div class="col-6 text-right">
                                                             <p>₹ 0</p>
@@ -749,7 +741,7 @@
                                                             <h6>Due Amount : ₹ 0</h6>
                                                         </div>
                                                         <div class="col-7 text-right">
-                                                            <p class="text-primary">View variable</p>
+                                                            <p class="text-primary"></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -760,10 +752,10 @@
                                 </div>
                                 <div class="">
                                     <!-- Month Card Template -->
-                                    <div class="staff-card shadow mb-4 month-card p-2">
+                                    <div class="card shadow month-card p-2">
                                         <div class="month-card-header d-flex justify-content-between align-items-center"
                                             onclick="toggleDetails('april-2024-details')">
-                                            <div class="d-flex align-items-center gap-4 ml-4 custom-new">
+                                            <div class="d-flex align-items-center gap-4 ml-4 custom-new p-1">
                                                 <i class="fas fa-calendar-alt mr-2"></i> <!-- Icon for the card -->
                                                 <div class="ml-4">
                                                     <h5>April 2024</h5>
@@ -837,20 +829,20 @@
                                                 <!-- Add more rows as needed for each section -->
                                                 <div class="customNet">
                                                     <div class="row py-2 mt-4">
-                                                        <div class="col-5">
+                                                        <div class="col-6">
                                                             <h6>Net Payable Amount (Gross Earnings - Total Deductions)
                                                             </h6>
                                                         </div>
                                                         <div class="col-3 text-right">
                                                             <p>28 Payable Days</p>
                                                         </div>
-                                                        <div class="col-3 text-end mr-4">
+                                                        <div class="col-2 text-end mr-4">
                                                             <p>₹ 0</p>
                                                         </div>
                                                     </div>
                                                     <div class="row py-2">
                                                         <div class="col-5">
-                                                            <h6>Adujustments</h6>
+                                                            <h6>Adjustments</h6>
                                                         </div>
                                                         <div class="col-6 text-right">
                                                             <p>₹ 0</p>
@@ -864,12 +856,12 @@
                                                             <p>₹ 0</p>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row py-2">
                                                         <div class="col-5">
                                                             <h6>Due Amount : ₹ 0</h6>
                                                         </div>
-                                                        <div class="col-4 text-right">
-                                                            <p class="text-primary">View variable</p>
+                                                        <div class="col-7 text-right">
+                                                            <p class="text-primary"></p>
                                                         </div>
                                                     </div>
                                                 </div>
