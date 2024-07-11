@@ -268,7 +268,7 @@
                                 </li>
                                 <li class="dropdown">
                                     <a class="nav-link menu-title" href="javascript:void(0)"><i
-                                        data-feather="grid"></i><span>HR</span></a>
+                                            data-feather="grid"></i><span>HR</span></a>
                                     <ul class="nav-submenu menu-content">
                                         <li><a href="hr_dashboard.html">Dashboard</a></li>
                                         <li><a href="hr_staff.html">Staff</a></li>
@@ -290,12 +290,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <div>
-                                    <h4 class="f-w-600">Manage Staff List</h4>
-                                    <span class="text-secondary">Holidays</span>
+                                    <h4 class="f-w-600">Add Shift</h4>
                                 </div>
                             </div>
                             <div class="col-6  d-flex justify-content-end align-items-right">
-                                <a href="hr_holiday_template.html">
+                                <a href="hr_shift_setting.html">
                                     <button class="btn btn-pill btn-primary">Back</button>
                                 </a>
                             </div>
@@ -304,19 +303,80 @@
                 </div>
 
                 <div class="container-fluid">
-                    <div class="leave-categories">
-                        <p class="fs-6 f-w-600 text-dark">Staff with Holidays</p>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="">
-                                    
-                                    <div class="row mt-4">
-                                        <div class="col-12">
-                                            <div class="input-group mb-3"><span class="input-group-text"><i data-feather="search"></i></span>
-                                                <input class="form-control" type="text" placeholder="Search">
-                                            </div>                                        
+                    <span class="text-secondary">Fixed shift</span>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row align-items-center d-flex">
+                                <h6 class="col-2">Shift Type</h6>
+                                <div class="col-2">
+                                    <div class="form-group">
+                                        <select class="form-select" id="role" name="role" disabled>
+                                            <option value="Contract">Fixed shift</option>
+                                            <option value="Regular"></option>
+                                            <option value="Contract"></option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row align-items-center d-flex">
+                                <h6 class="col-2">Shift Name</h6>
+                                <div class="col-2">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="contact" name="contact"
+                                            value="General Shift (9:00 AM to 7:00 PM)" placeholder="Enter Emergency Contact" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row align-items-center d-flex">
+                                <h6 class="col-2">Shift Time</h6>
+                                <div class="col-2">
+                                    <div class="form-group">
+                                        <div class="d-flex">
+                                            <input type="time" class="form-control" id="holidayStart" placeholder="January 2024">
+                                            <span class="mt-2 mx-2">To</span>
+                                            <input type="time" class="form-control" id="holidayEnd" placeholder="December 2024">
                                         </div>
                                     </div>
+                                </div>
+
+                            </div>
+                            <div class="row align-items-center d-flex">
+                                <h6 class="col-2">Unpaid Break</h6>
+                                <div class="col-2">
+                                    <button class="btn btn-pill btn-light">
+                                        Add
+                                    </button>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    
+                                </div>
+                                <div class="col-6  d-flex justify-content-end align-items-right">
+                                    <a>
+                                        <button class="btn btn-pill btn-primary">Add</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--staff section-->
+                    <div class="card">
+                        <div class="mt-3 pl-4 ml-4 px-4">
+                            <div>
+                                <div class="">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i data-feather="chevron-down" id="toggleDetails1" class="mb-2 text-primary"></i>
+                                      <!-- <span class="arrow-icon" id="toggleDetails1">&#9660;</span> -->
+                                      <label class="ml-2">Assigned Staff</label>
+                                    </div>
+                                    <!-- <div id="details1" class="d-none">Section to be displayed</div> -->
+                                  </div>
+                                <div id="details1" class="d-none">
                                     <div class="row mt-2">
                                         <div class="col-12 border-bottom">
                                             <div class="checkbox checkbox-primary">
@@ -429,62 +489,76 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-
-                                </div>
-                            </div>
+                            </div> 
                         </div>
-                    </div>
-
-                    <div class="leave-categories">
-                        <p class="fs-6 f-w-600 text-dark">staff without or other Holiday Policy</p>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="">
-                                    <div class="row mt-4">
-                                        <div class="col-4 f-w-600">
-                                            Staff name                                       
-                                        </div>
-                                        <div class="col-4 f-w-600">
-                                            Availed Leave (July 2024- Jun 2025)                                      
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4">
-                                        <div class="col-12">
-                                            <div class="input-group mb-3"><span class="input-group-text"><i data-feather="search"></i></span>
-                                                <input class="form-control" type="text" placeholder="Search">
-                                            </div>                                        
-                                        </div>
-                                    </div>
-                                    <div class="row mt-2">
-                                        <div class="col-12 border-bottom">
-                                            <div class="checkbox checkbox-primary">
-                                                <input id="checkbox-primary-16" type="checkbox">
-                                                <label for="checkbox-primary-16">Monthly Regular Staff (1)</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 d-flex">
-                                            <div class="col-4">
-                                                <div class="checkbox checkbox-primary">
-                                                    <input id="checkbox-primary-17" type="checkbox">
-                                                    <label for="checkbox-primary-17">Archana Patel</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-3 mt-2 btn-pill">
-                                                
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    
-
-                                </div>
-                            </div>
-                        </div>
-                        
                     </div>
                 </div>
 
+                <!--other shift staff-->
+                <div class="card">
+                    <div class="mt-3 pl-4 ml-4 px-4">
+                        <div>
+                            <div class="">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i data-feather="chevron-down" id="toggleDetails2" class="mb-2 text-primary"></i>
+                                  <!-- <span class="arrow-icon" id="toggleDetails1">&#9660;</span> -->
+                                  <label class="ml-2">Staff assigned to other shift</label>
+                                </div>
+                                <!-- <div id="details1" class="d-none">Section to be displayed</div> -->
+                              </div>
+                            <div id="details2" class="d-none">
+                                <div class="row mt-2">
+                                    <div class="col-12 border-bottom mb-3">
+                                        <div class="text-muted">
+                                            <label for="checkbox-primary-0">Monthly Regular Staff (12)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-1">
+                                        <div class="row d-flex text-muted">
+                                            <div class="col-9">Kaushik Trivedi</div>
+                                            <div class="col-3 justify-content-end">General shift(9:00 AM to 7:00 PM)</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-1">
+                                        <div class="row d-flex text-muted">
+                                            <div class="col-9">Riya Trivedi</div>
+                                            <div class="col-3 justify-content-end">General shift(9:00 AM to 7:00 PM)</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-1">
+                                        <div class="row d-flex text-muted">
+                                            <div class="col-9">Dev Tripathi</div>
+                                            <div class="col-3 justify-content-end">General shift(9:00 AM to 7:00 PM)</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-1 mt-4 border-bottom">
+                                        <div class="row d-flex text-muted">
+                                            <div class="col-9">Contractual Deactivated staff</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-1">
+                                        <div class="row d-flex text-muted">
+                                            <div class="col-9">Riya Trivedi</div>
+                                            <div class="col-3 justify-content-end">General shift(9:00 AM to 7:00 PM)</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-1">
+                                        <div class="row d-flex text-muted">
+                                            <div class="col-9">Dev Tripathi</div>
+                                            <div class="col-3 justify-content-end">General shift(9:00 AM to 7:00 PM)</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-1">
+                                        <div class="row d-flex text-muted">
+                                            <div class="col-9">Rohan Sharma</div>
+                                            <div class="col-3 justify-content-end">General shift(9:00 AM to 7:00 PM)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
             </div>
 
             <!-- Container-fluid Ends-->
@@ -545,7 +619,34 @@
     <script src="../assets/js/theme-customizer/customizer.js"></script>
     <script src="../assets/js/script.js"></script>
     <script>
-        
+        $(document).ready(function() {
+            $('#rule1').on('change', function() {
+                $('#details1').toggleClass('d-none', !this.checked);
+            });
+
+            $('#rule2').on('change', function() {
+                $('#details2').toggleClass('d-none', !this.checked);
+            });
+
+            $('#rule3').on('change', function() {
+                $('#details3').toggleClass('d-none', !this.checked);
+            });
+        });
+
+        $(document).ready(function() {
+      $('#toggleDetails1').on('click', function() {
+        $('#details1').toggleClass('d-none');
+        $(this).toggleClass('rotate');
+      });
+    });
+
+    $(document).ready(function() {
+      $('#toggleDetails2').on('click', function() {
+        $('#details2').toggleClass('d-none');
+        $(this).toggleClass('rotate');
+      });
+    });
+    
     </script>
     <!-- login js-->
     <!-- Plugin used-->

@@ -47,7 +47,24 @@
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/hr.css">
+    <style>
+        .card-radio {
+            cursor: pointer;
+        }
 
+        .card-radio:hover {
+            border-color: #007bff;
+        }
+
+        .card-radio input[type="radio"] {
+            display: none;
+        }
+
+        .card-radio input[type="radio"]:checked+.card {
+            border-color: #007bff;
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 
 <body>
@@ -222,7 +239,7 @@
                             </div>
                             <div class="col-6  d-flex justify-content-end align-items-right">
                                 <a href="hr_dashboard.html">
-                                    <button class="btn btn-pill btn-primary">Dashboard</button>
+                                    <button class="btn btn-pill btn-primary">Go to Dashboard</button>
                                 </a>
                             </div>
                         </div>
@@ -243,7 +260,8 @@
                                                     <div class="media">
                                                         <div class="media-body">
                                                             <h6> <span class="first_name_1">Leave Template </span></h6>
-                                                            <p class="email_add_1">View, Add and edit leave policy from here</p>
+                                                            <p class="email_add_1">View, Add and edit leave policy from
+                                                                here</p>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -266,7 +284,8 @@
                                                 <a class="nav-link" href="hr_salary_access.html">
                                                     <div class="media">
                                                         <div class="media-body">
-                                                            <h6> <span class="first_name_1">Salary Detail Access To Staff</span></h6>
+                                                            <h6> <span class="first_name_1">Salary Detail Access To
+                                                                    Staff</span></h6>
                                                             <p class="email_add_1">Manage who can see Salary details</p>
                                                         </div>
                                                     </div>
@@ -279,6 +298,161 @@
                                                         </div>
                                                     </div>
                                                 </a>
+                                                <a class="nav-link">
+                                                    <div class="media" data-bs-toggle="modal"
+                                                        data-bs-target="#leaveModal">
+                                                        <div class="media-body">
+                                                            <h6> <span class="first_name_1">Attendance Mode</span></h6>
+                                                            <p class="email_add_1">Modify attendance settings from here
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a class="nav-link">
+                                                    <div class="media" data-bs-toggle="modal"
+                                                        data-bs-target="#monthModal">
+                                                        <div class="media-body">
+                                                            <h6> <span class="first_name_1">Month Duration</span></h6>
+                                                            <p class="email_add_1">Modify attendance settings from here
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                            </div>
+                                            <div class="modal fade" id="leaveModal" tabindex="-1" role="dialog"
+                                                aria-labelledby="attendanceModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-md"
+                                                    role="document">
+                                                    <!-- <div class="text-muted">Note: Attendance can not set to auto as you have created shift in business</div> -->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="attendanceModalLabel">Manual
+                                                                Attendance</h5>
+                                                            <button class="btn-close" type="button"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form>
+                                                                <div class="form-group">
+                                                                    <div
+                                                                        class="form-check justify-content-between mt-2">
+                                                                        <div>
+                                                                            <input class="form-check-input" type="radio"
+                                                                                name="leaveOption" id="weeklyOff"
+                                                                                value="weeklyOff">
+                                                                            <label class="form-check-label"
+                                                                                for="weeklyOff">
+                                                                                Manual Attendance
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="text-muted">Staff can mark their own
+                                                                            attendance with selfie. Location will be
+                                                                            captured automatically</div>
+                                                                    </div>
+                                                                    <div class="border-bottom mt-2 mb-2"></div>
+
+                                                                    <div
+                                                                        class="form-check justify-content-between mt-2">
+                                                                        <div>
+                                                                            <input class="form-check-input" type="radio"
+                                                                                name="leaveOption" id="compOffLeave"
+                                                                                value="compOffLeave">
+                                                                            <label class="form-check-label"
+                                                                                for="compOffLeave">
+                                                                                Location Based
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="text-muted">Staff can mark their own
+                                                                            attendance with selfie. Location will be
+                                                                            captured automatically</div>
+                                                                    </div>
+                                                                    <div class="border-bottom mt-2 mb-2"></div>
+                                                                    <div
+                                                                        class="form-check justify-content-between mt-2">
+                                                                        <div>
+                                                                            <input class="form-check-input" type="radio"
+                                                                                name="leaveOption" id="other"
+                                                                                value="other">
+                                                                            <label class="form-check-label" for="other">
+                                                                                Selfie and Location Based
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="text-muted">Staff can mark their own
+                                                                            attendance with selfie. Location will be
+                                                                            captured automatically</div>
+                                                                    </div>
+                                                                    <div class="border-bottom mt-2 mb-2"></div>
+
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <div class="d-flex justify-content-end">
+                                                                <button class="btn btn-pill btn-secondary mx-2"
+                                                                    type="button"
+                                                                    data-bs-dismiss="modal">Cancel</button>
+                                                                <button class="btn btn-pill btn-success" type="submit"
+                                                                    form="attendanceForm">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal fade" id="monthModal" tabindex="-1" role="dialog"
+                                                aria-labelledby="attendanceModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-md"
+                                                    role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="attendanceModalLabel">Month
+                                                                Calculation</h5>
+                                                            <button class="btn-close" type="button"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <h6>How do you Calculate Monthly Salary</h6>
+                                                            <form id="monthCalcForm">
+                                                                <div class="form-group">
+                                                                    <label class="card-radio project-box">
+                                                                        <input type="radio" name="monthCalculation"
+                                                                            id="calendarMonth" value="calendarMonth">
+                                                                        <h5 class="card-title">Calendar Month</h5>
+                                                                        <p class="text-muted">Ex: March - 31 days, April
+                                                                            - 30 Days etc (Per day salary = Salary/No.
+                                                                            of days in month)</p>
+                                                                    </label>
+                                                                    <label class="card-radio project-box">
+                                                                        <input type="radio" name="monthCalculation"
+                                                                            id="thirtyDays" value="thirtyDays">
+                                                                        <h5 class="card-title">Every Month 30 Days</h5>
+                                                                        <p class="text-muted">Ex: March - 31 days, April
+                                                                            - 30 Days etc (Per day salary = Salary/30)
+                                                                        </p>
+                                                                    </label>
+                                                                    <label class="card-radio project-box">
+                                                                        <input type="radio" name="monthCalculation"
+                                                                            id="excludeWeeklyOffs"
+                                                                            value="excludeWeeklyOffs">
+                                                                        <h5 class="card-title">Exclude Weekly Offs</h5>
+                                                                        <p class="text-muted">Ex: Month with 31 days and
+                                                                            4 weekly-offs will have 27 payable days (Per
+                                                                            day salary = Salary/Payable Days)</p>
+                                                                    </label>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <div class="d-flex justify-content-end">
+                                                                <button class="btn btn-pill btn-secondary mx-2"
+                                                                    type="button"
+                                                                    data-bs-dismiss="modal">Cancel</button>
+                                                                <button class="btn btn-pill btn-success" type="submit"
+                                                                    form="monthCalcForm">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

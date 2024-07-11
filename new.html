@@ -1,37 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Show/Hide Section with Arrow</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .arrow-icon {
-      cursor: pointer;
-      font-size: 1.5em;
-    }
-    .rotate {
-      transform: rotate(180deg);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Month Calculation Modal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-radio {
+            cursor: pointer;
+        }
+        .card-radio:hover {
+            border-color: #007bff;
+        }
+        .card-radio input[type="radio"] {
+            display: none;
+        }
+        .card-radio input[type="radio"]:checked + .card {
+            border-color: #007bff;
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 <body>
-  <div class="container mt-5">
-    <div class="d-flex align-items-center mb-2">
-      <span class="arrow-icon" id="toggleDetails1">&#9660;</span>
-      <label class="ml-2">Assigned Staff</label>
+    <div class="modal fade" id="monthModal" tabindex="-1" role="dialog" aria-labelledby="attendanceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="attendanceModalLabel">Month Calculation</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>How do you Calculate Monthly Salary</h6>
+                    <form id="monthCalcForm">
+                        <div class="form-group">
+                            <label class="card-radio">
+                                <input type="radio" name="monthCalculation" id="calendarMonth" value="calendarMonth">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Calendar Month</h5>
+                                        <p class="card-text">Ex: March - 31 days, April - 30 Days etc (Per day salary = Salary/No. of days in month)</p>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="card-radio">
+                                <input type="radio" name="monthCalculation" id="thirtyDays" value="thirtyDays">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Every Month 30 Days</h5>
+                                        <p class="card-text">Ex: March - 31 days, April - 30 Days etc (Per day salary = Salary/30)</p>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="card-radio">
+                                <input type="radio" name="monthCalculation" id="excludeWeeklyOffs" value="excludeWeeklyOffs">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Exclude Weekly Offs</h5>
+                                        <p class="card-text">Ex: Month with 31 days and 4 weekly-offs will have 27 payable days (Per day salary = Salary/Payable Days)</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">Cancel</button>
+                        <button class="btn btn-pill btn-success" type="submit" form="monthCalcForm">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="details1" class="d-none">Section to be displayed</div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('#toggleDetails1').on('click', function() {
-        $('#details1').toggleClass('d-none');
-        $(this).toggleClass('rotate');
-      });
-    });
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

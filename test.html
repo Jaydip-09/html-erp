@@ -51,7 +51,9 @@
         .attendance-container {
             padding: 20px;
         }
-
+        .toggle-section {
+            display: none;
+        }
         .row-flex {
             display: flex;
             align-items: stretch;
@@ -268,7 +270,7 @@
                                 </li>
                                 <li class="dropdown">
                                     <a class="nav-link menu-title" href="javascript:void(0)"><i
-                                        data-feather="grid"></i><span>HR</span></a>
+                                            data-feather="grid"></i><span>HR</span></a>
                                     <ul class="nav-submenu menu-content">
                                         <li><a href="hr_dashboard.html">Dashboard</a></li>
                                         <li><a href="hr_staff.html">Staff</a></li>
@@ -287,15 +289,16 @@
             <div class="page-body">
                 <div class="container-fluid">
                     <div class="page-header dash-breadcrumb py-3">
-                        
                         <div class="row">
                             <div class="col-6">
                                 <div>
-                                    <h4 class="f-w-600">Create a Late Entry Rules</h4>
+                                    <h4 class="f-w-600">Salary detail access to Staff</h4>
+                                    <span class="text-secondary">Staff with salary detail access can see their salary
+                                        slips and payment details in their Staff App</span>
                                 </div>
                             </div>
                             <div class="col-6  d-flex justify-content-end align-items-right">
-                                <a href="hr_settings.html">
+                                <a href="hr_leave_template.html">
                                     <button class="btn btn-pill btn-primary">Back</button>
                                 </a>
                             </div>
@@ -304,62 +307,395 @@
                 </div>
 
                 <div class="container-fluid">
-                    <div class="card">
-                        <div class="card-body">
-                            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="rules-tab" data-toggle="tab" href="#rules" role="tab" aria-controls="rules" aria-selected="true">Rules</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="staff-selection-tab" data-toggle="tab" href="#staff-selection" role="tab" aria-controls="staff-selection" aria-selected="false">Staff Selection</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="rules" role="tabpanel" aria-labelledby="rules-tab">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="rule1">
-                                        <label class="form-check-label" for="rule1">
-                                            Deduct salary if staff is late by more than
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="rule2">
-                                        <label class="form-check-label" for="rule2">
-                                            Deduct half day salary if staff is late by more than
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="rule3">
-                                        <label class="form-check-label" for="rule3">
-                                            Deduct full day salary if staff is late by more than
-                                        </label>
-                                    </div>
-                                    <div class="form-group mt-3 d-flex gap">
-                                        <div class="col-11">
-                                        <label for="includeLateFine">Include late fine from start time of shift</label>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-check form-switch justify-content-end text-right">
-                                            <input class="form-check-input" type="checkbox" id="includeLateFine">
+                    <div class="leave-categories">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="">
+                                    <div class="row mt-4">
+                                        <div class="col-12">
+                                            <div class="f-w-600">
+                                                Salary Details Access
+                                            </div>
+                                            <div>
+                                                <div class="form-check d-flex justify-content-between mt-2">
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" name="leaveOption"
+                                                            id="weeklyOff" value="weeklyOff">
+                                                        <label class="form-check-label" for="weeklyOff">
+                                                            All staff
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-check d-flex justify-content-between mt-2">
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" name="leaveOption"
+                                                            id="weeklyOff" value="weeklyOff">
+                                                        <label class="form-check-label" for="weeklyOff">
+                                                            No Access
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-check d-flex justify-content-between mt-2">
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" name="leaveOption"
+                                                            id="weeklyOff" value="weeklyOff">
+                                                        <label class="form-check-label" for="weeklyOff">
+                                                            Only selected staff
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="row mt-4">
+                                        <div class="col-12">
+                                            <div class="input-group mb-3"><span class="input-group-text"><i
+                                                        data-feather="search"></i></span>
+                                                <input class="form-control" type="text" placeholder="Search">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-12 border-bottom mt-3">
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox-primary-0" type="checkbox">
+                                                <label for="checkbox-primary-0">Select All</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-1" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-1">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div><div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-2" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-2">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div><div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-3" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-3">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div><div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-4" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-4">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div><div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-5" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-5">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div><div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-6" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-6">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div><div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-7" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-7">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div><div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-8" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-8">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div><div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-9" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-9">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div><div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-10" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-10">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div><div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-11" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-11">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div><div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-12" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-12">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div><div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-13" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-13">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="row border-bottom">
+                                            <div class="col-4 mt-3">
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox-primary-15" type="checkbox" onclick="toggleVisibility(this)">
+                                                    <label for="checkbox-primary-15">Jitendra Sharma</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-3">
+                                                <span>8714562345</span>
+                                            </div>
+                                                <div class="col-3 border-bottom mt-3 pt-2 text-right toggle-section">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-11 text-right">
+                                                            <span>allow current cycle salary access</span>
+                                                        </div>
+                                                        <div class="col-1 text-right">
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" id="includeLateFine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        
+                                    </div>
+
+
                                 </div>
-                                </div>
-                                <div class="tab-pane fade" id="staff-selection" role="tabpanel" aria-labelledby="staff-selection-tab">
-                                    <h5>Staff Selection</h5>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">Staff Member 1</li>
-                                        <li class="list-group-item">Staff Member 2</li>
-                                        <li class="list-group-item">Staff Member 3</li>
-                                        <!-- Add more staff members as needed -->
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-end mt-4">
-                                <button type="button" class="btn btn-primary">Next: Assign Staff</button>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>
@@ -422,21 +758,14 @@
     <script src="../assets/js/theme-customizer/customizer.js"></script>
     <script src="../assets/js/script.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#rules-tab').on('click', function() {
-                $('#rules-tab').addClass('active');
-                $('#staff-selection-tab').removeClass('active');
-                $('#rules').addClass('show active');
-                $('#staff-selection').removeClass('show active');
-            });
-
-            $('#staff-selection-tab').on('click', function() {
-                $('#staff-selection-tab').addClass('active');
-                $('#rules-tab').removeClass('active');
-                $('#staff-selection').addClass('show active');
-                $('#rules').removeClass('show active');
-            });
-        });
+        function toggleVisibility(checkbox) {
+            const section = checkbox.closest('.row').querySelector('.toggle-section');
+            if (checkbox.checked) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        }
     </script>
     <!-- login js-->
     <!-- Plugin used-->
