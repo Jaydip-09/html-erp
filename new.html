@@ -3,77 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Month Calculation Modal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .card-radio {
-            cursor: pointer;
-        }
-        .card-radio:hover {
-            border-color: #007bff;
-        }
-        .card-radio input[type="radio"] {
-            display: none;
-        }
-        .card-radio input[type="radio"]:checked + .card {
-            border-color: #007bff;
-            background-color: #f8f9fa;
-        }
-    </style>
+    <title>Select2 Multi-select Dropdown</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 <body>
-    <div class="modal fade" id="monthModal" tabindex="-1" role="dialog" aria-labelledby="attendanceModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="attendanceModalLabel">Month Calculation</h5>
-                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>How do you Calculate Monthly Salary</h6>
-                    <form id="monthCalcForm">
-                        <div class="form-group">
-                            <label class="card-radio">
-                                <input type="radio" name="monthCalculation" id="calendarMonth" value="calendarMonth">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Calendar Month</h5>
-                                        <p class="card-text">Ex: March - 31 days, April - 30 Days etc (Per day salary = Salary/No. of days in month)</p>
-                                    </div>
-                                </div>
-                            </label>
-                            <label class="card-radio">
-                                <input type="radio" name="monthCalculation" id="thirtyDays" value="thirtyDays">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Every Month 30 Days</h5>
-                                        <p class="card-text">Ex: March - 31 days, April - 30 Days etc (Per day salary = Salary/30)</p>
-                                    </div>
-                                </div>
-                            </label>
-                            <label class="card-radio">
-                                <input type="radio" name="monthCalculation" id="excludeWeeklyOffs" value="excludeWeeklyOffs">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Exclude Weekly Offs</h5>
-                                        <p class="card-text">Ex: Month with 31 days and 4 weekly-offs will have 27 payable days (Per day salary = Salary/Payable Days)</p>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <div class="d-flex justify-content-end">
-                        <button class="btn btn-pill btn-secondary mx-2" type="button" data-bs-dismiss="modal">Cancel</button>
-                        <button class="btn btn-pill btn-success" type="submit" form="monthCalcForm">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <select class="form-select" id="week_off" name="week_off" multiple>
+        <option value="Sunday">Sunday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Friday">Friday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Monday">Monday</option>
+    </select>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#week_off').select2({
+                placeholder: 'Select Week off',
+                width: '100%' // Adjust the width as needed
+            });
+        });
+        $(".js-example-basic-multiple").select2();
+
+    </script>
 </body>
 </html>
