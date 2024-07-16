@@ -398,6 +398,22 @@
                                                                         </div>
                                                                         <div class="col-3">
                                                                             <div class="form-group">
+                                                                                <label for="reporting_manager">Role
+                                                                                    </label>
+                                                                                <select class="form-select" id="role"
+                                                                                    name="role">
+                                                                                    <option disabled selected>Select Role
+                                                                                    </option>
+                                                                                    <option value="Mishra">Admin
+                                                                                    </option>
+                                                                                    <option value="Sharma">Super Admin
+                                                                                    </option>
+                                                                                    <option value="Gupta">User</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-3">
+                                                                            <div class="form-group">
                                                                                 <label for="reporting_manager">Center
                                                                                     </label>
                                                                                 <select class="form-select" id="role"
@@ -841,6 +857,66 @@
                                                                                     id="account_holder_name"
                                                                                     name="account_holder_name"
                                                                                     placeholder="Enter Name of Account Holder" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 d-flex justify-content-end">
+                                                                            <!-- No next/back buttons here -->
+                                                                            <button type="button"
+                                                                                class="btn btn-pill btn-primary"
+                                                                                onclick="submitForm()">Submit</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        
+                                                        <!--Employment Information-->
+                                                        <div id="bank-info" class="info-section active p-4">
+                                                            <form id="staffForm">
+                                                                <div class="wizard-step active" id="personalDetails">
+                                                                    <div class="dash-breadcrumb mt-4">
+                                                                        <div class="row">
+                                                                            <div class="col-6">
+                                                                                <h5 class="f-w-600">Employment Information
+                                                                                </h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr />
+                                                                    <div class="row">
+                                                                        <div class="col-3">
+                                                                            <div class="form-group">
+                                                                                <label for="bank_name">Joining Date</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="bank_name" name="bank_name"
+                                                                                    placeholder="Enter Joining Date" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-3">
+                                                                            <div class="form-group">
+                                                                                <label for="ifsc_code">UAN Number</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="ifsc_code" name="ifsc_code"
+                                                                                    placeholder="Enter UAN Code" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-3">
+                                                                            <div class="form-group">
+                                                                                <label for="account_number">PAN
+                                                                                    </label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="account_number"
+                                                                                    name="account_number"
+                                                                                    placeholder="Enter PAN Number" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-3">
+                                                                            <div class="form-group">
+                                                                                <label for="account_holder_name">Aadhar NUmber</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="account_holder_name"
+                                                                                    name="account_holder_name"
+                                                                                    placeholder="Enter Name of Aadhar Holder" />
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-12 d-flex justify-content-end">
