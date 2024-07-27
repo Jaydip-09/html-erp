@@ -353,7 +353,22 @@
                                                                                 <option>Manager</option>
                                                                             </select>
                                                                         </div>
-
+                                                                        <div class="col-3">
+                                                                            <div class="form-group">
+                                                                                <label for="role">Role</label>
+                                                                                <select class="form-select" id="role"
+                                                                                    name="role">
+                                                                                    <option disabled selected>Select
+                                                                                        Role</option>
+                                                                                    <option value="Regular">HO
+                                                                                    </option>
+                                                                                    <option value="Contract">CEO
+                                                                                    </option>
+                                                                                    <option value="Work Basis">Accountant
+                                                                                        </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
                                                                         <div class="col-3">
                                                                             <div class="form-group">
                                                                                 <label for="role">Staff Type</label>
@@ -368,6 +383,14 @@
                                                                                     <option value="Work Basis">Work
                                                                                         Basis</option>
                                                                                 </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-3">
+                                                                            <div class="form-group">
+                                                                                <label for="email">Email</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="email" name="email"
+                                                                                    placeholder="Enter Email" />
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-3">
@@ -398,22 +421,6 @@
                                                                         </div>
                                                                         <div class="col-3">
                                                                             <div class="form-group">
-                                                                                <label for="reporting_manager">Role
-                                                                                    </label>
-                                                                                <select class="form-select" id="role"
-                                                                                    name="role">
-                                                                                    <option disabled selected>Select Role
-                                                                                    </option>
-                                                                                    <option value="Mishra">Admin
-                                                                                    </option>
-                                                                                    <option value="Sharma">Super Admin
-                                                                                    </option>
-                                                                                    <option value="Gupta">User</option>
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-3">
-                                                                            <div class="form-group">
                                                                                 <label for="reporting_manager">Center
                                                                                     </label>
                                                                                 <select class="form-select" id="role"
@@ -429,7 +436,15 @@
                                                                                 </select>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-12 d-flex justify-content-end">
+                                                                        <div class="col-3">
+                                                                            <div class="form-group">
+                                                                                <label for="email">Staff ID</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="email" name="email"
+                                                                                    placeholder="Enter Staff ID" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-12 d-flex justify-content-end">
                                                                             <!-- No next/back buttons here -->
                                                                         </div>
                                                                     </div>
@@ -565,14 +580,7 @@
                                                                     </div>
                                                                     <hr />
                                                                     <div class="row">
-                                                                        <div class="col-3">
-                                                                            <div class="form-group">
-                                                                                <label for="email">Email</label>
-                                                                                <input type="text" class="form-control"
-                                                                                    id="email" name="email"
-                                                                                    placeholder="Enter Email" />
-                                                                            </div>
-                                                                        </div>
+                                                                        
                                                                         <div class="col-3">
                                                                             <label>Gender</label>
                                                                             <div class="d-flex">
@@ -585,6 +593,15 @@
                                                                                         Male
                                                                                     </label>
                                                                                 </div>
+                                                                                    <div class="form-check me-3">
+                                                                                    <input class="form-check-input"
+                                                                                        type="radio" name="gender"
+                                                                                        id="male" value="male" />
+                                                                                     <label class="form-check-label"
+                                                                                        for="other">
+                                                                                        Other
+                                                                                    </label>
+                                                                                    </div>
                                                                                 <div class="form-check">
                                                                                     <input class="form-check-input"
                                                                                         type="radio" name="gender"
